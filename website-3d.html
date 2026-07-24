@@ -1,0 +1,2548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#4a1818">
+<title>Yogakshema Sabha Yuvajanasabha — Kannur District</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&family=Work+Sans:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --maroon:#b5272c;
+    --maroon-dark:#7a1414;
+    --maroon-deep:#420a0a;
+    --cream:#0a0908;
+    --parchment:#1e170d;
+    --gold:#e0a015;
+    --gold-light:#f2ba3c;
+    --gold-bright:#ffd166;
+    --emerald:#1f7a52;
+    --emerald-dark:#125537;
+    --emerald-bright:#2fb578;
+    --ink:#f2ede1;
+    --line:#332c22;
+    --surface:#161310;
+    --surface-2:#1e1a15;
+    --muted:#9c9385;
+    --serif:'Cormorant Garamond', 'Georgia', serif;
+    --sans:'Work Sans', Arial, sans-serif;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:var(--sans);
+    background:var(--cream);
+    color:var(--ink);
+    line-height:1.65;
+  }
+  h1,h2,h3{font-family:var(--serif);}
+
+  a.skip-link{
+    position:absolute; left:-999px; top:0;
+    background:var(--gold-bright); color:var(--maroon-deep);
+    padding:10px 16px; z-index:1000; font-family:var(--sans); font-weight:600;
+    border-radius:0 0 6px 0;
+  }
+  a.skip-link:focus{left:0;}
+
+  :focus-visible{outline:2px solid var(--gold-bright); outline-offset:3px;}
+
+  /* ---------- CUSTOM CURSOR (fine-pointer devices only) ---------- */
+  .cursor-dot, .cursor-ring{
+    position:fixed;
+    top:0; left:0;
+    border-radius:50%;
+    pointer-events:none;
+    z-index:9999;
+    transform:translate(-50%,-50%);
+    display:none;
+  }
+  .cursor-dot{
+    width:6px; height:6px;
+    background:var(--gold-bright);
+  }
+  .cursor-ring{
+    width:34px; height:34px;
+    border:1.5px solid rgba(255,209,102,0.55);
+    transition:width 0.2s ease, height 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+  }
+  .cursor-ring.hover{
+    width:56px; height:56px;
+    background:rgba(255,209,102,0.08);
+    border-color:var(--gold-bright);
+  }
+  @media (hover:hover) and (pointer:fine){
+    body{cursor:none;}
+    a, button, .flip-card, .tab-btn, .lang-btn{cursor:none;}
+    .cursor-dot, .cursor-ring{display:block;}
+  }
+
+  /* --- kasavu thread strip: the woven gold-on-maroon border motif that recurs
+     across the page, echoing the gold-bordered kasavu mundu/settu saree --- */
+  .kasavu-strip{
+    height:8px;
+    background:repeating-linear-gradient(115deg,
+      var(--gold-bright) 0 6px,
+      var(--emerald-bright) 6px 8px,
+      var(--maroon-deep) 8px 14px);
+  }
+
+  header{
+    background:rgba(74,24,24,0.88);
+    backdrop-filter:blur(14px) saturate(140%);
+    -webkit-backdrop-filter:blur(14px) saturate(140%);
+    color:#fff;
+    position:sticky;
+    top:0;
+    z-index:100;
+    box-shadow:0 1px 0 rgba(255,255,255,0.06) inset, 0 8px 24px rgba(0,0,0,0.18);
+    transition:background 0.3s ease, box-shadow 0.3s ease;
+  }
+  header.scrolled{
+    background:rgba(58,10,10,0.94);
+    box-shadow:0 1px 0 rgba(255,255,255,0.06) inset, 0 12px 30px rgba(0,0,0,0.3);
+  }
+  .nav-wrap{
+    max-width:1100px;
+    margin:0 auto;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:16px 20px;
+    flex-wrap:wrap;
+  }
+  .logo{
+    font-family:var(--serif);
+    font-size:1.6rem;
+    font-weight:700;
+    letter-spacing:0.3px;
+  }
+  .logo span{color:var(--gold-bright);}
+  .logo-sub{
+    font-family:var(--sans);
+    font-size:0.62rem;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    color:var(--emerald-bright);
+    font-weight:600;
+    margin-top:2px;
+  }
+  nav ul{
+    list-style:none;
+    display:flex;
+    gap:26px;
+    margin:0;
+    padding:0;
+    flex-wrap:wrap;
+  }
+  nav a{
+    position:relative;
+    color:#f4ead9;
+    text-decoration:none;
+    font-size:0.92rem;
+    font-weight:500;
+    cursor:pointer;
+    padding-bottom:4px;
+  }
+  nav a::after{
+    content:'';
+    position:absolute;
+    left:0; bottom:0;
+    width:100%; height:2px;
+    background:var(--gold-bright);
+    transform:scaleX(0);
+    transform-origin:right;
+    transition:transform 0.3s ease;
+  }
+  nav a:hover{color:var(--gold-bright);}
+  nav a:hover::after{transform:scaleX(1); transform-origin:left;}
+
+  .lang-toggle{
+    display:flex;
+    gap:4px;
+    background:rgba(255,255,255,0.1);
+    border-radius:20px;
+    padding:3px;
+  }
+  .lang-btn{
+    background:none;
+    border:none;
+    color:#f4ead9;
+    padding:5px 13px;
+    border-radius:16px;
+    font-family:var(--sans);
+    font-size:0.78rem;
+    font-weight:600;
+    cursor:pointer;
+    transition:background 0.2s ease, color 0.2s ease;
+  }
+  .lang-btn.active{background:var(--gold-bright); color:var(--maroon-deep);}
+  .lang-btn:not(.active):hover{background:rgba(255,255,255,0.15);}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    background:radial-gradient(ellipse at 50% -10%, #d43838 0%, var(--maroon) 40%, var(--maroon-dark) 72%, var(--maroon-deep) 100%);
+    color:#fff;
+    text-align:center;
+    padding:64px 20px 0;
+    overflow:hidden;
+    --sx:50%; --sy:40%;
+  }
+  .hero::before{
+    content:'';
+    position:absolute;
+    inset:0;
+    background:radial-gradient(circle 420px at var(--sx) var(--sy), rgba(255,209,102,0.16), transparent 70%);
+    pointer-events:none;
+    z-index:1;
+    transition:opacity 0.4s ease;
+  }
+  .hero-malayalam{
+    position:absolute;
+    inset:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-family:var(--serif);
+    font-size:11rem;
+    color:rgba(255,255,255,0.035);
+    font-weight:700;
+    pointer-events:none;
+    white-space:nowrap;
+    user-select:none;
+  }
+  .hero-inner{position:relative; z-index:2; max-width:720px; margin:0 auto;}
+
+  .lamp-wrap{
+    width:280px;
+    height:220px;
+    margin:0 auto 6px;
+    position:relative;
+  }
+  .lamp-float{
+    width:100%;
+    height:100%;
+    position:relative;
+    transform-style:preserve-3d;
+  }
+  @media (prefers-reduced-motion: no-preference){
+    .lamp-float{animation:lampFloat 6s ease-in-out infinite;}
+  }
+  @keyframes lampFloat{
+    0%,100%{transform:perspective(600px) rotateY(-6deg) translateY(0);}
+    50%{transform:perspective(600px) rotateY(6deg) translateY(-6px);}
+  }
+  .lamp-wrap svg{width:100%; height:100%; display:block; filter:drop-shadow(0 8px 14px rgba(0,0,0,0.4)) drop-shadow(0 0 18px rgba(255,209,102,0.35));}
+  .flame{
+    position:absolute;
+    left:50%;
+    top:2px;
+    width:20px;
+    height:28px;
+    transform:translateX(-50%);
+    background:linear-gradient(180deg, var(--gold-bright) 0%, #ff9d3d 55%, var(--maroon) 100%);
+    clip-path:polygon(50% 0%, 78% 38%, 64% 46%, 84% 72%, 50% 100%, 16% 72%, 36% 46%, 22% 38%);
+    filter:drop-shadow(0 0 10px rgba(240,200,105,0.9)) drop-shadow(0 0 22px rgba(240,150,60,0.5));
+    transform-origin:50% 90%;
+  }
+  .flame.inner{
+    width:9px; height:14px; top:8px;
+    background:linear-gradient(180deg,#fff7d6 0%, var(--gold-bright) 70%);
+    filter:drop-shadow(0 0 6px rgba(255,247,214,0.9));
+    animation-delay:0.15s;
+  }
+  .ember{
+    position:absolute;
+    width:3px; height:3px;
+    border-radius:50%;
+    background:var(--gold-bright);
+    opacity:0;
+  }
+  .ember:nth-child(1){left:44%; top:0;}
+  .ember:nth-child(2){left:56%; top:4px;}
+  .ember:nth-child(3){left:50%; top:-4px;}
+
+  @media (prefers-reduced-motion: no-preference){
+    .flame{animation:flicker 2.6s ease-in-out infinite;}
+    .flame.inner{animation:flicker 2.2s ease-in-out infinite reverse;}
+    .ember:nth-child(1){animation:rise 3.4s ease-in 0.2s infinite;}
+    .ember:nth-child(2){animation:rise 3.8s ease-in 1.1s infinite;}
+    .ember:nth-child(3){animation:rise 3s ease-in 2s infinite;}
+    .hero-inner > *{animation:fadeUp 0.9s ease both;}
+    .hero-inner .eyebrow-hero{animation-delay:0.1s;}
+    .hero-inner h1{animation-delay:0.25s;}
+    .hero-inner p{animation-delay:0.4s;}
+    .hero-inner .hero-ctas{animation-delay:0.55s;}
+    .hero-inner .fact-strip{animation-delay:0.7s;}
+    .reveal{transition:opacity 0.7s ease, transform 0.7s ease;}
+  }
+  @keyframes flicker{
+    0%,100%{transform:translateX(-50%) scale(1,1) rotate(0deg);}
+    25%{transform:translateX(-50%) scale(0.94,1.06) rotate(-2deg);}
+    50%{transform:translateX(-50%) scale(1.05,0.95) rotate(1.5deg);}
+    75%{transform:translateX(-50%) scale(0.97,1.03) rotate(-1deg);}
+  }
+  @keyframes rise{
+    0%{opacity:0; transform:translateY(0) scale(1);}
+    15%{opacity:0.9;}
+    100%{opacity:0; transform:translateY(-70px) scale(0.3);}
+  }
+  @keyframes fadeUp{
+    from{opacity:0; transform:translateY(16px);}
+    to{opacity:1; transform:translateY(0);}
+  }
+
+  .eyebrow-hero{
+    text-transform:uppercase;
+    letter-spacing:3px;
+    font-size:0.78rem;
+    color:var(--gold-bright);
+    font-weight:600;
+    margin-bottom:6px;
+  }
+  .hero h1{
+    font-size:clamp(2.8rem, 9vw, 6.4rem);
+    font-weight:700;
+    margin:0 0 12px;
+    letter-spacing:-0.5px;
+    line-height:1.02;
+  }
+  .hero p.lede{
+    max-width:560px;
+    margin:0 auto 30px;
+    color:#f0e2cc;
+    font-size:1.12rem;
+  }
+  .btn{
+    display:inline-block;
+    background:linear-gradient(135deg, var(--gold-bright), var(--gold));
+    color:var(--maroon-deep);
+    padding:12px 28px;
+    border-radius:8px;
+    text-decoration:none;
+    font-weight:700;
+    border:none;
+    border-bottom:4px solid #8a5f0d;
+    cursor:pointer;
+    font-size:0.95rem;
+    font-family:var(--sans);
+    transition:transform 0.12s ease, box-shadow 0.25s ease, border-bottom-width 0.12s ease, margin-top 0.12s ease;
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,0.5),
+      0 1px 2px rgba(44,14,14,0.15),
+      0 6px 14px rgba(44,14,14,0.12);
+  }
+  .btn:hover{
+    transform:translateY(-3px);
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,0.5),
+      0 2px 4px rgba(44,14,14,0.15),
+      0 16px 28px rgba(224,160,21,0.4),
+      0 6px 12px rgba(224,160,21,0.25);
+  }
+  .btn:active{
+    transform:translateY(1px);
+    border-bottom-width:1px;
+    margin-top:3px;
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,0.4),
+      0 1px 2px rgba(44,14,14,0.15);
+    transition:transform 0.05s ease, box-shadow 0.05s ease, border-bottom-width 0.05s ease, margin-top 0.05s ease;
+  }
+  .btn-outline{
+    background:transparent;
+    border:1px solid rgba(255,255,255,0.6);
+    border-bottom:1px solid rgba(255,255,255,0.6);
+    color:#fff;
+    margin-left:10px;
+    box-shadow:none;
+  }
+  .btn-outline:hover{background:rgba(255,255,255,0.08); box-shadow:none; transform:translateY(-3px);}
+  .btn-outline:active{transform:translateY(1px); margin-top:0;}
+
+  .fact-strip{
+    display:flex;
+    justify-content:center;
+    gap:40px;
+    flex-wrap:wrap;
+    margin:44px auto 0;
+    padding:22px 20px;
+    border-top:1px solid rgba(255,255,255,0.15);
+  }
+  .fact{text-align:center;}
+  .fact .num{
+    font-family:var(--serif);
+    font-size:2.1rem;
+    font-weight:700;
+    color:var(--gold-bright);
+    display:block;
+    text-shadow:
+      0 1px 0 rgba(255,255,255,0.25),
+      0 2px 3px rgba(0,0,0,0.35),
+      0 6px 10px rgba(0,0,0,0.25);
+  }
+  .fact:nth-child(2n) .num{color:var(--emerald-bright);}
+  .fact .label{font-size:0.72rem; letter-spacing:1.5px; text-transform:uppercase; color:#f5e6c8;}
+
+  .roofline{
+    height:26px;
+    margin-top:34px;
+    background:
+      repeating-linear-gradient(135deg, transparent 0 11px, var(--cream) 11px 12px),
+      repeating-linear-gradient(45deg, transparent 0 11px, var(--cream) 11px 12px);
+    background-color:transparent;
+  }
+
+  .marquee-strip{
+    overflow:hidden;
+    background:var(--surface);
+    border-bottom:1px solid var(--line);
+    padding:14px 0;
+    white-space:nowrap;
+  }
+  .marquee-track{
+    display:inline-flex;
+    align-items:center;
+    gap:16px;
+    font-family:var(--serif);
+    font-size:1.4rem;
+    font-weight:600;
+    color:var(--ink);
+  }
+  .marquee-dot{color:var(--gold-bright); font-size:0.9rem;}
+  @media (prefers-reduced-motion: no-preference){
+    .marquee-track{animation:marqueeScroll 22s linear infinite;}
+  }
+  @keyframes marqueeScroll{
+    from{transform:translateX(0);}
+    to{transform:translateX(-50%);}
+  }
+
+  /* ---------- SECTIONS ---------- */
+  section{
+    max-width:1000px;
+    margin:0 auto;
+    padding:70px 20px;
+  }
+  .section-title{
+    text-align:center;
+    margin-bottom:40px;
+  }
+  .section-title h2{
+    font-size:2.1rem;
+    font-weight:700;
+    color:var(--ink);
+    margin:0 0 8px;
+  }
+  .section-title .eyebrow{
+    text-transform:uppercase;
+    letter-spacing:2.5px;
+    font-size:0.75rem;
+    color:var(--gold);
+    font-family:var(--sans);
+    font-weight:600;
+  }
+  .divider{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    margin:12px auto 0;
+  }
+  .divider .line{width:34px; height:1px; background:var(--line);}
+  .divider .flame-mini{
+    width:8px; height:11px;
+    background:linear-gradient(180deg, var(--gold-bright), var(--gold));
+    clip-path:polygon(50% 0%, 78% 38%, 64% 46%, 84% 72%, 50% 100%, 16% 72%, 36% 46%, 22% 38%);
+  }
+
+  .card{
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-top:3px solid transparent;
+    border-radius:14px;
+    padding:28px;
+    box-shadow:
+      0 1px 2px rgba(44,14,14,0.04),
+      0 4px 10px rgba(44,14,14,0.05);
+    transition:transform 0.12s ease-out, box-shadow 0.35s ease, border-color 0.35s ease;
+    transform-style:preserve-3d;
+    will-change:transform;
+  }
+  .card:hover{
+    box-shadow:
+      0 2px 6px rgba(44,14,14,0.08),
+      0 20px 40px rgba(181,39,44,0.18),
+      0 8px 16px rgba(181,39,44,0.1);
+    border-top-color:var(--gold);
+  }
+  .grid-3 .card:nth-child(2):hover{
+    border-top-color:var(--emerald-bright);
+    box-shadow:
+      0 2px 6px rgba(44,14,14,0.08),
+      0 20px 40px rgba(31,122,82,0.2),
+      0 8px 16px rgba(31,122,82,0.1);
+  }
+  .card h3{margin-top:0; color:var(--ink); transform:translateZ(20px);}
+  .grid-2{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:26px;
+    perspective:1200px;
+  }
+  .grid-3{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+    perspective:1200px;
+  }
+  .tilt-card{
+    transition:transform 0.1s ease-out, box-shadow 0.35s ease, border-color 0.35s ease;
+    position:relative;
+    overflow:hidden;
+    --mx:50%; --my:50%;
+  }
+  .tilt-card::after{
+    content:'';
+    position:absolute;
+    inset:0;
+    background:radial-gradient(circle 180px at var(--mx) var(--my), rgba(255,255,255,0.35), transparent 70%);
+    opacity:0;
+    transition:opacity 0.3s ease;
+    pointer-events:none;
+    border-radius:inherit;
+  }
+  .tilt-card:hover::after{opacity:1;}
+
+  /* ---------- 3D FLIP CARDS (Committee) ---------- */
+  .flip-card{
+    perspective:1400px;
+    cursor:pointer;
+    min-height:230px;
+  }
+  .flip-card-inner{
+    position:relative;
+    width:100%;
+    height:100%;
+    min-height:230px;
+    transition:transform 0.7s cubic-bezier(0.4,0.2,0.2,1);
+    transform-style:preserve-3d;
+  }
+  .flip-card:hover{filter:brightness(1.02);}
+  .flip-card:hover .flip-face{box-shadow:0 2px 4px rgba(44,14,14,0.06), 0 14px 28px rgba(44,14,14,0.14);}
+  .flip-card.flipped .flip-card-inner{transform:rotateY(180deg);}
+  .flip-face{
+    position:absolute;
+    inset:0;
+    backface-visibility:hidden;
+    -webkit-backface-visibility:hidden;
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-top:3px solid var(--gold);
+    border-radius:14px;
+    padding:26px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    box-shadow:
+      0 1px 2px rgba(44,14,14,0.04),
+      0 8px 20px rgba(44,14,14,0.08);
+    transition:box-shadow 0.3s ease;
+  }
+  .flip-back{
+    transform:rotateY(180deg);
+    border-top-color:var(--emerald-bright);
+  }
+  .flip-hint{
+    font-size:0.72rem;
+    color:var(--muted);
+    margin-top:12px;
+    letter-spacing:0.3px;
+  }
+  @media (prefers-reduced-motion: reduce){
+    .flip-card:hover .flip-card-inner{transform:none;}
+  }
+  @media (max-width:700px){
+    .grid-2, .grid-3{grid-template-columns:1fr;}
+    .hero-malayalam{font-size:6rem;}
+  }
+
+  .reveal{
+    opacity:0;
+    transform:perspective(1000px) rotateX(-12deg) translateY(36px) scale(0.96);
+  }
+  .reveal.in-view{opacity:1; transform:perspective(1000px) rotateX(0deg) translateY(0) scale(1);}
+  @media (prefers-reduced-motion: reduce){
+    .reveal{transform:none;}
+    .reveal.in-view{transform:none;}
+  }
+
+  /* ---------- TIMELINE ---------- */
+  .timeline{
+    border-left:3px solid var(--line);
+    padding-left:28px;
+    margin-left:6px;
+    position:relative;
+  }
+  .timeline-item{
+    margin-bottom:30px;
+    position:relative;
+    opacity:0;
+    transform:translateX(-14px);
+    transition:opacity 0.6s ease, transform 0.6s ease;
+  }
+  .timeline-item.in-view{opacity:1; transform:translateX(0);}
+  .timeline-item::before{
+    content:'';
+    position:absolute;
+    left:-37px;
+    top:3px;
+    width:13px;
+    height:16px;
+    background:linear-gradient(180deg, var(--gold-bright), var(--gold));
+    clip-path:polygon(50% 0%, 78% 38%, 64% 46%, 84% 72%, 50% 100%, 16% 72%, 36% 46%, 22% 38%);
+    box-shadow:0 0 0 4px var(--cream);
+  }
+  .timeline-item:nth-child(3n+2)::before{background:linear-gradient(180deg, var(--emerald-bright), var(--emerald));}
+  .timeline-item .year{
+    font-family:var(--serif);
+    font-weight:700;
+    color:var(--gold-bright);
+    font-size:1.15rem;
+  }
+  .timeline-item p{margin:4px 0 0;}
+
+  .objectives-list{
+    list-style:none;
+    padding:0;
+    margin:0;
+  }
+  .objectives-list li{
+    padding:12px 0 12px 32px;
+    border-bottom:1px solid var(--line);
+    position:relative;
+    transition:padding-left 0.25s ease, color 0.25s ease;
+  }
+  .objectives-list li:hover{padding-left:38px; color:var(--ink);}
+  .objectives-list li::before{
+    content:'';
+    position:absolute;
+    left:2px; top:16px;
+    width:9px; height:12px;
+    background:linear-gradient(180deg, var(--gold-bright), var(--gold));
+    clip-path:polygon(50% 0%, 78% 38%, 64% 46%, 84% 72%, 50% 100%, 16% 72%, 36% 46%, 22% 38%);
+  }
+
+  .committee-card{text-align:center;}
+  .avatar{
+    width:74px;
+    height:74px;
+    border-radius:50%;
+    background:linear-gradient(135deg, var(--maroon), var(--maroon-dark));
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:1.5rem;
+    font-family:var(--serif);
+    margin:0 auto 14px;
+    box-shadow:
+      0 0 0 3px var(--cream),
+      0 0 0 5px var(--line),
+      0 3px 6px rgba(44,14,14,0.2);
+    transition:box-shadow 0.3s ease, transform 0.3s ease;
+  }
+  .committee-card:hover .avatar{
+    box-shadow:
+      0 0 0 3px var(--cream),
+      0 0 0 5px var(--gold-bright),
+      0 12px 20px rgba(44,14,14,0.3);
+    transform:scale(1.08) translateY(-4px);
+  }
+  .committee-card:nth-child(2) .avatar{background:linear-gradient(135deg, var(--emerald), var(--emerald-dark));}
+  .committee-card:nth-child(2):hover .avatar{
+    box-shadow:
+      0 0 0 3px var(--cream),
+      0 0 0 5px var(--emerald-bright),
+      0 12px 20px rgba(18,85,55,0.35);
+  }
+  .role{
+    color:var(--gold);
+    font-size:0.85rem;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    font-family:var(--sans);
+    font-weight:600;
+  }
+  .note{
+    background:var(--parchment);
+    border:1px solid var(--gold);
+    color:var(--gold-light);
+    padding:13px 16px;
+    border-radius:4px;
+    font-size:0.85rem;
+    font-family:var(--sans);
+    margin-top:14px;
+  }
+
+  form{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+  }
+  form input, form select{
+    padding:12px 13px;
+    border:1px solid var(--line);
+    border-radius:4px;
+    font-family:var(--sans);
+    font-size:0.95rem;
+    background:var(--surface-2);
+    color:var(--ink);
+    transition:border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+  form input::placeholder{color:var(--muted);}
+  form select option{background:var(--surface-2); color:var(--ink);}
+  form input:focus, form select:focus{
+    border-color:var(--gold);
+    box-shadow:0 0 0 3px rgba(224,160,21,0.2);
+    outline:none;
+  }
+  .field-hint{
+    font-size:0.78rem;
+    color:var(--muted);
+    margin-top:-10px;
+    font-family:var(--sans);
+  }
+  .tabs{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    margin-bottom:24px;
+  }
+  .tab-btn{
+    background:none;
+    border:1px solid var(--gold);
+    color:var(--gold-bright);
+    padding:9px 22px;
+    border-radius:20px;
+    cursor:pointer;
+    font-family:var(--sans);
+    font-size:0.9rem;
+    font-weight:500;
+    transition:background 0.25s ease, color 0.25s ease, transform 0.2s ease;
+  }
+  .tab-btn:hover{transform:translateY(-1px); background:rgba(224,160,21,0.1);}
+  .tab-btn.active{
+    background:var(--gold);
+    color:var(--maroon-deep);
+  }
+  .hidden{display:none;}
+  .msg{
+    font-family:var(--sans);
+    font-size:0.9rem;
+    padding:11px 13px;
+    border-radius:4px;
+    margin-top:6px;
+  }
+  .msg.success{background:#12291b;color:#6fdb9a;border:1px solid #1f7a52;}
+  .msg.error{background:#341313;color:#ff9a9a;border:1px solid #a13333;}
+  @media (prefers-reduced-motion: no-preference){
+    .msg.error{animation:shake 0.4s ease;}
+  }
+  @keyframes shake{
+    0%,100%{transform:translateX(0);}
+    20%{transform:translateX(-6px);}
+    40%{transform:translateX(5px);}
+    60%{transform:translateX(-4px);}
+    80%{transform:translateX(3px);}
+  }
+  .event-card{position:relative; padding-top:32px;}
+  .event-badge{
+    position:absolute;
+    top:16px; right:16px;
+    font-size:0.68rem;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    padding:4px 10px;
+    border-radius:20px;
+    font-family:var(--sans);
+  }
+  .event-badge.done{background:rgba(31,122,82,0.18); color:var(--emerald-bright);}
+  .event-badge.planned{background:rgba(224,160,21,0.18); color:var(--gold-bright);}
+  .event-date{
+    font-family:var(--serif);
+    font-weight:700;
+    color:var(--gold-bright);
+    font-size:1.1rem;
+    margin-bottom:4px;
+  }
+  .event-card p{margin:6px 0 0; font-size:0.94rem;}
+
+  .tabs.events-tabs .tab-btn.active[data-kind="planned"]{background:var(--emerald); border-color:var(--emerald);}
+  .tab-btn[data-kind="planned"]{border-color:var(--emerald); color:var(--emerald-dark);}
+  .tab-btn[data-kind="planned"]:hover{background:rgba(31,122,82,0.08);}
+
+  .member-area{
+    background:var(--surface);
+    border:2px dashed var(--gold);
+    border-radius:6px;
+    padding:28px;
+    text-align:center;
+  }
+  .admin-banner{
+    display:inline-block;
+    background:linear-gradient(135deg, var(--emerald-bright), var(--emerald));
+    color:#fff;
+    font-weight:700;
+    font-size:0.85rem;
+    padding:8px 18px;
+    border-radius:20px;
+  }
+  .table-wrap{overflow-x:auto; margin:10px 0 18px;}
+  table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:0.88rem;
+    font-family:var(--sans);
+  }
+  table th, table td{
+    text-align:left;
+    padding:10px 12px;
+    border-bottom:1px solid var(--line);
+    white-space:nowrap;
+  }
+  table th{
+    background:var(--parchment);
+    color:var(--ink);
+    text-transform:uppercase;
+    font-size:0.72rem;
+    letter-spacing:0.5px;
+  }
+  table tr:hover td{background:rgba(224,160,21,0.06);}
+  .admin-warning{border-color:#a13333; background:#2a1414; color:#ff9a9a;}
+
+  /* ---------- ADMIN MODE ---------- */
+  .admin-mode-bar{
+    background:linear-gradient(90deg, var(--emerald-dark), var(--emerald));
+    color:#fff;
+    text-align:center;
+    padding:10px 16px;
+    font-family:var(--sans);
+    font-size:0.85rem;
+    font-weight:600;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:16px;
+    flex-wrap:wrap;
+    position:sticky;
+    top:0;
+    z-index:99;
+  }
+  .admin-mode-bar button{
+    background:rgba(255,255,255,0.15);
+    border:1px solid rgba(255,255,255,0.5);
+    color:#fff;
+    padding:5px 14px;
+    border-radius:16px;
+    font-size:0.78rem;
+    cursor:pointer;
+    font-family:var(--sans);
+    transition:background 0.2s ease;
+  }
+  .admin-mode-bar button:hover{background:rgba(255,255,255,0.28);}
+  .admin-mode-bar.hidden{display:none;}
+
+  .event-card .event-admin-controls{
+    display:flex;
+    gap:8px;
+    margin-top:14px;
+    padding-top:12px;
+    border-top:1px dashed var(--line);
+  }
+  .event-admin-controls button{
+    flex:1;
+    font-size:0.78rem;
+    padding:6px 8px;
+    border-radius:4px;
+    border:1px solid var(--line);
+    background:var(--surface);
+    cursor:pointer;
+    font-family:var(--sans);
+    font-weight:600;
+    transition:background 0.2s ease, border-color 0.2s ease;
+  }
+  .event-admin-controls .edit-btn{color:var(--gold); border-color:var(--gold);}
+  .event-admin-controls .edit-btn:hover{background:rgba(224,160,21,0.1);}
+  .event-admin-controls .delete-btn{color:#a13333; border-color:#eab3b3;}
+  .event-admin-controls .delete-btn:hover{background:#fbe7e7;}
+
+  .modal-overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(44,14,14,0.45);
+    backdrop-filter:blur(6px);
+    -webkit-backdrop-filter:blur(6px);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    z-index:200;
+    padding:20px;
+  }
+  .modal-box{
+    background:var(--surface);
+    border-radius:16px;
+    padding:28px;
+    max-width:420px;
+    width:100%;
+    box-shadow:
+      0 2px 4px rgba(0,0,0,0.06),
+      0 30px 60px rgba(44,14,14,0.35),
+      0 12px 24px rgba(44,14,14,0.2);
+  }
+  @media (prefers-reduced-motion: no-preference){
+    .modal-overlay:not(.hidden) .modal-box{animation:modalPop 0.28s cubic-bezier(0.17,0.89,0.32,1.28) both;}
+  }
+  @keyframes modalPop{
+    from{opacity:0; transform:translateY(14px) scale(0.96);}
+    to{opacity:1; transform:translateY(0) scale(1);}
+  }
+  .modal-box h3{margin-top:0; color:var(--ink);}
+  .modal-overlay.hidden{display:none;}
+
+  .bg-badge{
+    display:inline-block;
+    background:var(--maroon-dark);
+    color:#fff;
+    font-weight:700;
+    font-size:0.8rem;
+    padding:3px 10px;
+    border-radius:4px;
+  }
+  .job-card .job-meta{color:var(--gold); font-size:0.82rem; font-weight:600; margin:4px 0 10px;}
+  .urgency-tag{
+    display:inline-block;
+    font-size:0.68rem;
+    font-weight:700;
+    text-transform:uppercase;
+    padding:3px 9px;
+    border-radius:12px;
+    margin-top:8px;
+  }
+  .urgency-tag.immediate{background:rgba(161,51,51,0.25); color:#ff9a9a;}
+  .urgency-tag.week{background:rgba(224,160,21,0.18); color:var(--gold-bright);}
+  .urgency-tag.planned{background:rgba(31,122,82,0.18); color:var(--emerald-bright);}
+
+  .section-panel{
+    animation:fadeUp 0.5s ease both;
+  }
+
+  footer{
+    background:var(--maroon-deep);
+    color:#e6d7c3;
+    text-align:center;
+    padding:34px 20px 30px;
+    font-family:var(--sans);
+    font-size:0.85rem;
+  }
+  footer p{margin:6px 0;}
+  footer a{color:var(--gold-bright);}
+  .contact-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:26px;
+  }
+  @media (max-width:700px){.contact-grid{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+<div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+<a href="#home" class="skip-link" onclick="showSection('home'); return true;">Skip to content</a>
+
+<header id="siteHeader">
+  <div class="nav-wrap">
+    <div class="logo">Yogakshema <span>Sabha</span>
+      <div class="logo-sub" data-i18n="logo.sub">Yuvajanasabha &middot; Kannur District</div>
+    </div>
+    <nav>
+      <ul>
+        <li><a onclick="showSection('home')" data-i18n="nav.home">Home</a></li>
+        <li><a onclick="showSection('history')" data-i18n="nav.history">History</a></li>
+        <li><a onclick="showSection('objectives')" data-i18n="nav.objectives">Objectives</a></li>
+        <li><a onclick="showSection('committee')" data-i18n="nav.committee">Committee</a></li>
+        <li><a onclick="showSection('events')" data-i18n="nav.events">Events</a></li>
+        <li><a onclick="showSection('blooddonation')" data-i18n="nav.blood">Blood Donation</a></li>
+        <li><a onclick="showSection('stemcell')" data-i18n="nav.stemcell">Stem Cell</a></li>
+        <li><a onclick="showSection('request')" data-i18n="nav.request">Request Help</a></li>
+        <li><a onclick="showSection('matrimony')" data-i18n="nav.matrimony">Matrimony</a></li>
+        <li><a onclick="showSection('jobs')" data-i18n="nav.jobs">Jobs</a></li>
+        <li><a onclick="showSection('account')" data-i18n="nav.account">Register / Login</a></li>
+        <li><a onclick="showSection('contact')" data-i18n="nav.contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="lang-toggle">
+      <button type="button" class="lang-btn active" id="langBtnEn" onclick="setLanguage('en')">EN</button>
+      <button type="button" class="lang-btn" id="langBtnMl" onclick="setLanguage('ml')">മല</button>
+    </div>
+  </div>
+  <div class="kasavu-strip"></div>
+</header>
+
+<div id="adminModeBar" class="admin-mode-bar hidden">
+  <span data-i18n="admin.bar.text">🔒 Admin Mode is ON — you can add/edit/delete events on the Events page</span>
+  <button onclick="showSection('events')" data-i18n="admin.bar.goto">Go to Events</button>
+  <button onclick="exitAdminMode()" data-i18n="admin.bar.exit">Exit Admin Mode</button>
+</div>
+
+<!-- HOME -->
+<div id="home">
+  <div class="hero">
+    <div class="hero-malayalam" aria-hidden="true">യോഗക്ഷേമം</div>
+    <div class="hero-inner">
+      <div class="lamp-wrap" aria-hidden="true">
+       <div class="lamp-float">
+        <svg viewBox="0 0 320 250" xmlns="http://www.w3.org/2000/svg" class="om-symbol">
+          <defs>
+            <linearGradient id="omGold" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#fff2c4"/>
+              <stop offset="45%" stop-color="#ffd166"/>
+              <stop offset="100%" stop-color="#c8880f"/>
+            </linearGradient>
+            <linearGradient id="omGoldText" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#ffe29a"/>
+              <stop offset="50%" stop-color="#ffd166"/>
+              <stop offset="100%" stop-color="#e0a015"/>
+            </linearGradient>
+          </defs>
+          <!-- Om symbol: layered extrusion for a 3D carved-gold look -->
+          <g font-family="'Noto Sans Devanagari', sans-serif" font-weight="700">
+            <text x="166" y="128" text-anchor="middle" font-size="118" fill="#4a3006">ॐ</text>
+            <text x="163" y="125" text-anchor="middle" font-size="118" fill="#6b4a0e">ॐ</text>
+            <text x="161" y="122" text-anchor="middle" font-size="118" fill="#96690f">ॐ</text>
+            <text x="159" y="119" text-anchor="middle" font-size="118" fill="#c8880f">ॐ</text>
+            <text x="160" y="116" text-anchor="middle" font-size="118" fill="url(#omGold)">ॐ</text>
+          </g>
+          <!-- Organisation name: same layered-extrusion technique, smaller scale -->
+          <g font-family="'Cormorant Garamond', Georgia, serif" font-weight="700">
+            <text x="163" y="196" text-anchor="middle" font-size="25" letter-spacing="1" fill="#4a3006">YOGAKSHEMASABHA</text>
+            <text x="161" y="194" text-anchor="middle" font-size="25" letter-spacing="1" fill="#96690f">YOGAKSHEMASABHA</text>
+            <text x="160" y="192" text-anchor="middle" font-size="25" letter-spacing="1" fill="url(#omGoldText)">YOGAKSHEMASABHA</text>
+
+            <text x="163" y="226" text-anchor="middle" font-size="20" letter-spacing="2" fill="#4a3006">KANNUR JILLA</text>
+            <text x="161" y="224" text-anchor="middle" font-size="20" letter-spacing="2" fill="#96690f">KANNUR JILLA</text>
+            <text x="160" y="222" text-anchor="middle" font-size="20" letter-spacing="2" fill="url(#omGoldText)">KANNUR JILLA</text>
+          </g>
+        </svg>
+       </div>
+      </div>
+      <div class="eyebrow-hero" data-i18n="hero.eyebrow">Yuvajanasabha &middot; Kannur District</div>
+      <h1>Yogakshema Sabha</h1>
+      <p class="lede" data-i18n="hero.lede">The youth wing of Yogakshema Sabha, Kannur District — carrying forward unity, tradition, education, and social welfare for the next generation.</p>
+      <div class="hero-ctas">
+        <a class="btn" onclick="showSection('account')" data-i18n="hero.cta.member">Become a Member</a>
+        <a class="btn btn-outline" onclick="showSection('history')" data-i18n="hero.cta.history">Learn Our History</a>
+      </div>
+      <div class="fact-strip">
+        <div class="fact"><span class="num" data-count-to="1908">0</span><span class="label" data-i18n="fact.founded">Founded</span></div>
+        <div class="fact"><span class="num" id="yearsActive" data-count-to="118">0</span><span class="label" data-i18n="fact.years">Years of Service</span></div>
+        <div class="fact"><span class="num" data-count-to="1976">0</span><span class="label" data-i18n="fact.reorganised">Reorganised</span></div>
+        <div class="fact"><span class="num" data-count-to="5" data-count-suffix="+">0</span><span class="label" data-i18n="fact.districts">District Samithis</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="roofline" aria-hidden="true"></div>
+
+  <div class="marquee-strip" aria-hidden="true">
+    <div class="marquee-track">
+      <span data-i18n="marquee.unity">Unity</span><span class="marquee-dot">•</span>
+      <span data-i18n="marquee.tradition">Tradition</span><span class="marquee-dot">•</span>
+      <span data-i18n="marquee.education">Education</span><span class="marquee-dot">•</span>
+      <span data-i18n="marquee.welfare">Welfare</span><span class="marquee-dot">•</span>
+      <span data-i18n="marquee.unity">Unity</span><span class="marquee-dot">•</span>
+      <span data-i18n="marquee.tradition">Tradition</span><span class="marquee-dot">•</span>
+      <span data-i18n="marquee.education">Education</span><span class="marquee-dot">•</span>
+      <span data-i18n="marquee.welfare">Welfare</span><span class="marquee-dot">•</span>
+    </div>
+  </div>
+
+  <section>
+    <div class="section-title">
+      <div class="eyebrow" data-i18n="about.eyebrow">About Us</div>
+      <h2 data-i18n="about.h2">Who We Are</h2>
+      <div class="divider"><span class="line"></span><span class="flame-mini"></span><span class="line"></span></div>
+    </div>
+    <div class="grid-2">
+      <div class="card reveal">
+        <p data-i18n="about.p1">Yogakshema Sabha is a socio-cultural organisation of the Namboothiri community of Kerala. It was first founded in 1908 (as the Namboothiri Yogakshema Mahaasabha) with the aim of promoting education, social reform, and welfare within the community.</p>
+        <p data-i18n="about.p2">After a period of decline around the 1950s, the Sabha was reorganised and re-registered on 7 April 1976, with Thrissur as its focal centre, continuing its founding mission with renewed vigour.</p>
+      </div>
+      <div class="card reveal">
+        <p data-i18n="about.p3"><strong>Our mission</strong> is to support the social, financial, educational, and cultural development of our members — while preserving cultural values and encouraging community unity across generations.</p>
+        <p data-i18n="about.p4">Today, the Sabha operates through district-level committees (Jilla Samithis) across Kerala, each carrying forward local activities under the common banner of the Sabha.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-title">
+      <div class="eyebrow" data-i18n="activities.eyebrow">What We Do</div>
+      <h2 data-i18n="activities.h2">Our Activities</h2>
+      <div class="divider"><span class="line"></span><span class="flame-mini"></span><span class="line"></span></div>
+    </div>
+    <div class="grid-3">
+      <div class="card reveal">
+        <h3 data-i18n="activities.education.h3">Education</h3>
+        <p data-i18n="activities.education.p">Support for schools, scholarships, and study classes to encourage modern education among members.</p>
+      </div>
+      <div class="card reveal">
+        <h3 data-i18n="activities.welfare.h3">Social Welfare</h3>
+        <p data-i18n="activities.welfare.p">Assistance with rituals and life-events ("Shodasakriya"), family support, and community welfare programs.</p>
+      </div>
+      <div class="card reveal">
+        <h3 data-i18n="activities.events.h3">Community Events</h3>
+        <p data-i18n="activities.events.p">Annual conventions, district-level gatherings, family unions, and cultural programs held each year.</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- HISTORY -->
+<div id="history" class="hidden">
+  <section>
+    <div class="section-title">
+      <div class="eyebrow" data-i18n="history.eyebrow">Our Journey</div>
+      <h2 data-i18n="history.h2">History &amp; Milestones</h2>
+      <div class="divider"><span class="line"></span><span class="flame-mini"></span><span class="line"></span></div>
+    </div>
+    <div class="timeline">
+      <div class="timeline-item reveal-item">
+        <div class="year">1908</div>
+        <p data-i18n="history.item1">A large gathering of Namboothiris met at Cherumukku Vaidikan's Illam on the banks of the Periyar river on Mahasivarathri day, giving birth to the Namboothiri Yogakshema Mahaasabha, focused on eradicating illiteracy and promoting modern education.</p>
+      </div>
+      <div class="timeline-item reveal-item">
+        <div class="year" data-i18n="history.year2">Early 1900s</div>
+        <p data-i18n="history.item2">The Sabha launched the monthly journal "Yogakshemam" and later "Mangalodayam Maasika", and established a library-cum-reading room at Thrissur that became a favourite place for researchers.</p>
+      </div>
+      <div class="timeline-item reveal-item">
+        <div class="year">1942</div>
+        <p data-i18n="history.item3">The original Namboothiri Yogakshema Sabha, which had looked after community welfare in pre-independence days, was dissolved.</p>
+      </div>
+      <div class="timeline-item reveal-item">
+        <div class="year">25 Dec 1975</div>
+        <p data-i18n="history.item4">A few Namboothiris met informally at the Namboothiri Vidyalayam, Thrissur, to discuss reviving the organisation for the community's general upliftment.</p>
+      </div>
+      <div class="timeline-item reveal-item">
+        <div class="year">7 Apr 1976</div>
+        <p data-i18n="history.item5">Yogakshema Sabha was formally registered with Thrissur as its focal centre, open to all members of the Namboothiri community as defined under the Namboothiri Act of 1958.</p>
+      </div>
+      <div class="timeline-item reveal-item">
+        <div class="year">28 Feb 1980</div>
+        <p data-i18n="history.item6">Nearly a thousand members marched from the University of Kerala to the Secretariat in Thiruvananthapuram, presenting a petition of 47 requisites to the government — a tradition of anniversary demonstrations that followed in later years.</p>
+      </div>
+      <div class="timeline-item reveal-item">
+        <div class="year">1982</div>
+        <p data-i18n="history.item7">Permission was granted for a college at Sreekrishnapuram, a direct outcome of an earlier demonstrational procession organised by the Sabha.</p>
+      </div>
+    </div>
+    <div class="note" data-i18n="history.note">Historical details are summarised from publicly available sources on the Sabha's history, including namboothiri.com. Exact details may vary slightly between regional chapters.</div>
+  </section>
+</div>
+
+<!-- OBJECTIVES -->
+<div id="objectives" class="hidden">
+  <section>
+    <div class="section-title">
+      <div class="eyebrow" data-i18n="objectives.eyebrow">Our Purpose</div>
+      <h2 data-i18n="objectives.h2">Aims &amp; Objectives</h2>
+      <div class="divider"><span class="line"></span><span class="flame-mini"></span><span class="line"></span></div>
+    </div>
+    <div class="card reveal">
+      <ul class="objectives-list">
+        <li data-i18n="objectives.item1">Promote the general social, financial, and cultural wellbeing of the community.</li>
+        <li data-i18n="objectives.item2">Assist members with the performance of traditional rituals ("Shodasakriya").</li>
+        <li data-i18n="objectives.item3">Encourage and support modern educational development among members.</li>
+        <li data-i18n="objectives.item4">Improve employment prospects and financial self-reliance for the community.</li>
+        <li data-i18n="objectives.item5">Preserve cultural values and spiritual traditions across generations.</li>
+        <li data-i18n="objectives.item6">Organise district-level conventions, family unions, and study classes.</li>
+        <li data-i18n="objectives.item7">Represent community interests before the government where needed.</li>
+      </ul>
+    </div>
+  </section>
+</div>
+
+<!-- COMMITTEE -->
+<div id="committee" class="hidden">
+  <section>
+    <div class="section-title">
+      <div class="eyebrow" data-i18n="committee.eyebrow">Leadership</div>
+      <h2 data-i18n="committee.h2">Managing Committee</h2>
+      <div class="divider"><span class="line"></span><span class="flame-mini"></span><span class="line"></span></div>
+    </div>
+    <div class="grid-3">
+      <div class="flip-card reveal" onclick="this.classList.toggle('flipped')">
+        <div class="flip-card-inner">
+          <div class="flip-face flip-front">
+            <div class="avatar">P</div>
+            <h3 data-i18n="committee.president">President</h3>
+            <div class="role" data-i18n="committee.officebearer">Office Bearer</div>
+            <div class="flip-hint" data-i18n="committee.taptoflip">Tap to flip</div>
+          </div>
+          <div class="flip-face flip-back">
+            <h3 data-i18n="committee.president">President</h3>
+            <p data-i18n="committee.back">Part of the Kannur District Yuvajanasabha managing committee, helping guide the organisation's activities and represent members.</p>
+          </div>
+        </div>
+      </div>
+      <div class="flip-card reveal" onclick="this.classList.toggle('flipped')">
+        <div class="flip-card-inner">
+          <div class="flip-face flip-front">
+            <div class="avatar">S</div>
+            <h3 data-i18n="committee.secretary">General Secretary</h3>
+            <div class="role" data-i18n="committee.officebearer">Office Bearer</div>
+            <div class="flip-hint" data-i18n="committee.taptoflip">Tap to flip</div>
+          </div>
+          <div class="flip-face flip-back">
+            <h3 data-i18n="committee.secretary">General Secretary</h3>
+            <p data-i18n="committee.back">Part of the Kannur District Yuvajanasabha managing committee, helping guide the organisation's activities and represent members.</p>
+          </div>
+        </div>
+      </div>
+      <div class="flip-card reveal" onclick="this.classList.toggle('flipped')">
+        <div class="flip-card-inner">
+          <div class="flip-face flip-front">
+            <div class="avatar">T</div>
+            <h3 data-i18n="committee.treasurer">Treasurer</h3>
+            <div class="role" data-i18n="committee.officebearer">Office Bearer</div>
+            <div class="flip-hint" data-i18n="committee.taptoflip">Tap to flip</div>
+          </div>
+          <div class="flip-face flip-back">
+            <h3 data-i18n="committee.treasurer">Treasurer</h3>
+            <p data-i18n="committee.back">Part of the Kannur District Yuvajanasabha managing committee, helping guide the organisation's activities and represent members.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="note" data-i18n="committee.note">These are placeholder roles for the prototype. Replace with your local Jilla Samithi's actual committee member names and photos.</div>
+  </section>
+</div>
+
+<!-- EVENTS -->
+<div id="events" class="hidden">
+  <section>
+    <div class="section-title">
+      <div class="eyebrow" data-i18n="events.eyebrow">Milestones &amp; Plans</div>
+      <h2 data-i18n="events.h2">Events Done &amp; Events Planned</h2>
+      <div class="divider"><span class="line"></span><span class="flame-mini"></span><span class="line"></span></div>
+    </div>
+
+    <div class="tabs events-tabs">
+      <button class="tab-btn active" id="tab-events-done" data-kind="done" onclick="switchEventsTab('done')" data-i18n="events.tab.done">Events Done</button>
+      <button class="tab-btn" id="tab-events-planned" data-kind="planned" onclick="switchEventsTab('planned')" data-i18n="events.tab.planned">Events Planned</button>
+    </div>
+
+    <div id="eventsAdminBar" class="hidden" style="text-align:center;margin-bottom:18px;">
+      <button class="btn" onclick="openEventModal(currentEventsTab)" data-i18n="events.addbtn">+ Add Event</button>
+    </div>
+
+    <div id="eventsDone" class="grid-3"></div>
+    <div id="eventsPlanned" class="grid-3 hidden"></div>
+
+    <div class="note" data-i18n="events.note">Prototype note: these are placeholder events. In Admin Mode, you can add, edit, or delete events directly on this page — no code editing needed.</div>
+  </section>
+</div>
+
+<!-- EVENT ADD/EDIT MODAL (admin only) -->
+<div id="eventModalOverlay" class="modal-overlay hidden">
+  <div class="modal-box">
+    <h3 id="eventModalTitle">Add Event</h3>
+    <form id="eventForm">
+      <input type="hidden" id="eventFormId">
+      <input type="hidden" id="eventFormKind">
+      <input type="text" id="eventFormDate" placeholder="Date (e.g. Jan 2024 or 2026)" required>
+      <input type="text" id="eventFormTitle" placeholder="Event Title" required>
+      <input type="text" id="eventFormDesc" placeholder="Short Description" required>
+      <div style="display:flex; gap:10px; margin-top:6px;">
+        <button type="submit" class="btn" style="flex:1;" data-i18n="events.modal.save">Save Event</button>
+        <button type="button" class="tab-btn" style="flex:1;" onclick="closeEventModal()" data-i18n="events.modal.cancel">Cancel</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- BLOOD DONATION -->
+<div id="blooddonation" class="hidden">
+  <section>
+    <div class="section-title">
+      <div class="eyebrow" data-i18n="blood.eyebrow">Save a Life</div>
+      <h2 data-i18n="blood.h2">Blood Donation</h2>
+      <div class="divider"><span class="line"></span><span class="flame-mini"></span><span class="line"></span></div>
+    </div>
+    <div class="grid-2">
+      <div class="card reveal">
+        <h3 data-i18n="blood.why.h3">Why Register?</h3>
+        <p data-i18n="blood.why.p1">Our blood donor directory connects willing donors within the community to members in urgent need. One registration can help save a life at a moment's notice.</p>
+        <p data-i18n="blood.why.p2"><strong>Eligibility:</strong> Generally age 18–65, weight above 50kg, and in good health. Please consult a doctor if unsure.</p>
+      </div>
+      <div class="card reveal">
+        <h3 data-i18n="blood.register.h3">Register as a Blood Donor</h3>
+        <form id="bloodDonorForm">
+          <input type="text" id="bdName" placeholder="Full Name" data-i18n-placeholder="account.placeholder.name" required>
+          <input type="tel" id="bdPhone" placeholder="Phone Number" data-i18n-placeholder="account.placeholder.phone" required>
+          <div class="field-hint" data-i18n="hint.phone">Please use your registered mobile number, so it's easier to match with our records.</div>
+          <select id="bdBloodGroup" required>
+            <option value="" disabled selected data-i18n="blood.placeholder.group">Blood Group</option>
+            <option>A+</option><option>A-</option><option>B+</option><option>B-</option>
+            <option>AB+</option><option>AB-</option><option>O+</option><option>O-</option>
+          </select>
+          <select id="bdDistrict" required>
+            <option value="" disabled selected data-i18n="account.placeholder.district">District</option>
+            <option>Kannur</option><option>Thrissur</option><option>Ernakulam</option>
+            <option>Palakkad</option><option>Malappuram</option><option>Kottayam</option>
+            <option data-i18n="account.district.other">Other</option>
+          </select>
+          <button type="submit" class="btn" data-i18n="blood.register.btn">Register as Donor</button>
+        </form>
+        <div id="bloodDonorMsg"></div>
+      </div>
+    </div>
+
+    <div class="section-title" style="margin-top:50px;">
+      <h2 style="font-size:1.5rem;" data-i18n="blood.registered.h2">Registered Donors</h2>
+    </div>
+    <div style="max-width:260px;margin:0 auto 18px;">
+      <select id="bloodFilterGroup" onchange="renderBloodDonors()">
+        <option value="" data-i18n="blood.filter.all">All Blood Groups</option>
+        <option>A+</option><option>A-</option><option>B+</option><option>B-</option>
+        <option>AB+</option><option>AB-</option><option>O+</option><option>O-</option>
+      </select>
+    </div>
+    <div class="table-wrap">
+      <table id="bloodDonorsTable">
+        <thead><tr><th data-i18n="table.name">Name</th><th data-i18n="blood.table.group">Blood Group</th><th data-i18n="table.district">District</th><th data-i18n="table.phone">Phone</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <div class="note" data-i18n="blood.note">Prototype note: donor registrations are stored in memory for this browser session only. A real deployment would need a database so donors stay registered permanently and phone numbers are only shown to verified members, not the public.</div>
+  </section>
+</div>
+
+<!-- STEM CELL DONATION -->
+<div id="stemcell" class="hidden">
+  <section>
+    <div class="section-title">
+      <div class="eyebrow" data-i18n="stemcell.eyebrow">Give Someone a Second Chance</div>
+      <h2 data-i18n="stemcell.h2">Stem Cell Donation</h2>
+      <div class="divider"><span class="line"></span><span class="flame-mini"></span><span class="line"></span></div>
+    </div>
+    <div class="grid-2">
+      <div class="card reveal">
+        <h3 data-i18n="stemcell.about.h3">About Stem Cell Donation</h3>
+        <p data-i18n="stemcell.about.p1">Stem cell (bone marrow) donation can be life-saving for patients with blood cancers and certain genetic disorders. Registering only requires a simple cheek swab — you're contacted only if you're found to be a match for a patient.</p>
+        <p data-i18n="stemcell.about.p2"><strong>Eligibility:</strong> Generally age 18–50 and in good general health.</p>
+      </div>
+      <div class="card reveal">
+        <h3 data-i18n="stemcell.register.h3">Register as a Potential Donor</h3>
+        <form id="stemCellForm">
+          <input type="text" id="scName" placeholder="Full Name" data-i18n-placeholder="account.placeholder.name" required>
+          <input type="number" id="scAge" placeholder="Age" data-i18n-placeholder="stemcell.placeholder.age" min="18" max="50" required>
+          <input type="tel" id="scPhone" placeholder="Phone Number" data-i18n-placeholder="account.placeholder.phone" required>
+          <div class="field-hint" data-i18n="hint.phone">Please use your registered mobile number, so it's easier to match with our records.</div>
+          <select id="scDistrict" required>
+            <option value="" disabled selected data-i18n="account.placeholder.district">District</option>
+            <option>Kannur</option><option>Thrissur</option><option>Ernakulam</option>
+            <option>Palakkad</option><option>Malappuram</option><option>Kottayam</option>
+            <option data-i18n="account.district.other">Other</option>
+          </select>
+          <button type="submit" class="btn" data-i18n="stemcell.register.btn">Register Interest</button>
+        </form>
+        <div id="stemCellMsg"></div>
+      </div>
+    </div>
+
+    <div class="section-title" style="margin-top:50px;">
+      <h2 style="font-size:1.5rem;" data-i18n="stemcell.registered.h2">Registered Potential Donors</h2>
+    </div>
+    <div class="table-wrap">
+      <table id="stemCellTable">
+        <thead><tr><th data-i18n="table.name">Name</th><th data-i18n="stemcell.table.age">Age</th><th data-i18n="table.district">District</th><th data-i18n="table.phone">Phone</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <div class="note" data-i18n="stemcell.note">Prototype note: this only registers interest. A real registry would need medical coordination with an accredited stem cell/bone marrow donor program, and data stored securely and permanently.</div>
+  </section>
+</div>
+
+<!-- REQUEST HELP (Blood / Stem Cell) -->
+<div id="request" class="hidden">
+  <section>
+    <div class="section-title">
+      <div class="eyebrow" data-i18n="request.eyebrow">Need Help?</div>
+      <h2 data-i18n="request.h2">Request Blood or Stem Cell Donation</h2>
+      <div class="divider"><span class="line"></span><span class="flame-mini"></span><span class="line"></span></div>
+    </div>
+    <div class="card reveal" style="max-width:560px;margin:0 auto;">
+      <form id="helpRequestForm">
+        <select id="reqType" required>
+          <option value="" disabled selected data-i18n="request.placeholder.type">What do you need?</option>
+          <option value="Blood" data-i18n="request.type.blood">Blood Donation</option>
+          <option value="Stem Cell" data-i18n="request.type.stemcell">Stem Cell Donation</option>
+        </select>
+        <input type="text" id="reqPatientName" placeholder="Patient Name" data-i18n-placeholder="request.placeholder.patient" required>
+        <select id="reqBloodGroup">
+          <option value="" disabled selected data-i18n="request.placeholder.bloodgroup">Blood Group Needed (if applicable)</option>
+          <option>A+</option><option>A-</option><option>B+</option><option>B-</option>
+          <option>AB+</option><option>AB-</option><option>O+</option><option>O-</option>
+        </select>
+        <input type="text" id="reqHospital" placeholder="Hospital Name & Location" data-i18n-placeholder="request.placeholder.hospital" required>
+        <input type="tel" id="reqContact" placeholder="Contact Number" data-i18n-placeholder="request.placeholder.contact" required>
+        <div class="field-hint" data-i18n="hint.phone">Please use your registered mobile number, so it's easier to match with our records.</div>
+        <select id="reqUrgency" required>
+          <option value="" disabled selected data-i18n="request.placeholder.urgency">Urgency</option>
+          <option data-i18n="request.urgency.immediate">Immediate (within 24 hrs)</option>
+          <option data-i18n="request.urgency.week">This Week</option>
+          <option data-i18n="request.urgency.planned">Planned / Not Urgent</option>
+        </select>
+        <input type="text" id="reqNotes" placeholder="Additional Notes (optional)" data-i18n-placeholder="request.placeholder.notes">
+        <button type="submit" class="btn" data-i18n="request.submit">Submit Request</button>
+      </form>
+      <div id="helpRequestMsg"></div>
+    </div>
+    <div class="note" style="max-width:560px;margin:20px auto 0;" data-i18n="request.note">Prototype note: requests are visible to admins only (via Admin Mode) in this demo. A real deployment would notify matching donors directly — for example by SMS or email — and should never be relied on for genuine medical emergencies; always contact a hospital or blood bank directly for urgent needs.</div>
+  </section>
+</div>
+
+<!-- MATRIMONY -->
+<div id="matrimony" class="hidden">
+  <section>
+    <div class="section-title">
+      <div class="eyebrow" data-i18n="matrimony.eyebrow">Community Matrimony</div>
+      <h2 data-i18n="matrimony.h2">Matrimony</h2>
+      <div class="divider"><span class="line"></span><span class="flame-mini"></span><span class="line"></span></div>
+    </div>
+
+    <div class="card reveal" style="max-width:560px;margin:0 auto 40px;">
+      <h3 data-i18n="matrimony.create.h3">Create a Profile</h3>
+      <form id="matrimonyForm">
+        <input type="text" id="mName" placeholder="Full Name" data-i18n-placeholder="account.placeholder.name" required>
+        <input type="number" id="mAge" placeholder="Age" data-i18n-placeholder="stemcell.placeholder.age" min="18" max="80" required>
+        <select id="mGender" required>
+          <option value="" disabled selected data-i18n="matrimony.placeholder.gender">Gender</option>
+          <option data-i18n="matrimony.gender.male">Male</option><option data-i18n="matrimony.gender.female">Female</option>
+        </select>
+        <input type="text" id="mEducation" placeholder="Education" data-i18n-placeholder="matrimony.placeholder.education" required>
+        <input type="text" id="mProfession" placeholder="Profession" data-i18n-placeholder="matrimony.placeholder.profession" required>
+        <select id="mDistrict" required>
+          <option value="" disabled selected data-i18n="account.placeholder.district">District</option>
+          <option>Kannur</option><option>Thrissur</option><option>Ernakulam</option>
+          <option>Palakkad</option><option>Malappuram</option><option>Kottayam</option>
+          <option data-i18n="account.district.other">Other</option>
+        </select>
+        <input type="email" id="mContact" placeholder="Contact Email" data-i18n-placeholder="matrimony.placeholder.contact" required>
+        <button type="submit" class="btn" data-i18n="matrimony.submit">Submit Profile</button>
+      </form>
+      <div id="matrimonyMsg"></div>
+    </div>
+
+    <div class="section-title"><h2 style="font-size:1.5rem;" data-i18n="matrimony.browse.h2">Browse Profiles</h2></div>
+    <div id="matrimonyProfilesGrid" class="grid-3"></div>
+    <div class="note" data-i18n="matrimony.note">Prototype note: profiles are shown publicly here for demo purposes only. A real deployment must gate contact details behind verified member logins for privacy and safety, and include profile moderation.</div>
+  </section>
+</div>
+
+<!-- JOBS -->
+<div id="jobs" class="hidden">
+  <section>
+    <div class="section-title">
+      <div class="eyebrow" data-i18n="jobs.eyebrow">Careers</div>
+      <h2 data-i18n="jobs.h2">Search &amp; Apply for Jobs</h2>
+      <div class="divider"><span class="line"></span><span class="flame-mini"></span><span class="line"></span></div>
+    </div>
+
+    <div style="max-width:420px;margin:0 auto 30px;">
+      <input type="text" id="jobSearchInput" placeholder="Search by title, company, or location..." data-i18n-placeholder="jobs.search.placeholder" oninput="renderJobs()" style="width:100%; padding:12px 14px; border:1px solid var(--line); border-radius:20px; font-family:var(--sans);">
+    </div>
+
+    <div id="jobsGrid" class="grid-3"></div>
+    <div id="noJobsMsg" class="note hidden" style="text-align:center;" data-i18n="jobs.none">No jobs match your search.</div>
+  </section>
+</div>
+
+<!-- JOB APPLY MODAL -->
+<div id="jobModalOverlay" class="modal-overlay hidden">
+  <div class="modal-box">
+    <h3 id="jobModalTitle" data-i18n="jobs.apply.title">Apply for Job</h3>
+    <form id="jobApplyForm">
+      <input type="hidden" id="jobApplyJobId">
+      <input type="text" id="jobApplyName" placeholder="Full Name" data-i18n-placeholder="account.placeholder.name" required>
+      <input type="email" id="jobApplyEmail" placeholder="Email Address" data-i18n-placeholder="account.placeholder.email" required>
+      <input type="tel" id="jobApplyPhone" placeholder="Phone Number" data-i18n-placeholder="account.placeholder.phone" required>
+      <div class="field-hint" data-i18n="hint.phone">Please use your registered mobile number, so it's easier to match with our records.</div>
+      <input type="text" id="jobApplyResumeLink" placeholder="Resume Link (Google Drive, LinkedIn, etc.)" data-i18n-placeholder="jobs.apply.resume">
+      <input type="text" id="jobApplyNote" placeholder="Why are you a good fit? (optional)" data-i18n-placeholder="jobs.apply.note">
+      <div style="display:flex; gap:10px; margin-top:6px;">
+        <button type="submit" class="btn" style="flex:1;" data-i18n="jobs.apply.submit">Submit Application</button>
+        <button type="button" class="tab-btn" style="flex:1;" onclick="closeJobModal()" data-i18n="events.modal.cancel">Cancel</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- ACCOUNT: REGISTER / LOGIN -->
+<div id="account" class="hidden">
+  <section>
+    <div class="section-title">
+      <div class="eyebrow" data-i18n="account.eyebrow">Membership</div>
+      <h2 data-i18n="account.h2">Register or Login</h2>
+      <div class="divider"><span class="line"></span><span class="flame-mini"></span><span class="line"></span></div>
+    </div>
+
+    <div class="tabs">
+      <button class="tab-btn active" id="tab-register" onclick="switchTab('register')" data-i18n="account.tab.register">Register</button>
+      <button class="tab-btn" id="tab-login" onclick="switchTab('login')" data-i18n="account.tab.login">Login</button>
+    </div>
+
+    <div class="card" style="max-width:460px;margin:0 auto;">
+      <form id="registerForm">
+        <input type="text" id="regName" placeholder="Full Name" data-i18n-placeholder="account.placeholder.name" required>
+        <input type="email" id="regEmail" placeholder="Email Address" data-i18n-placeholder="account.placeholder.email" required>
+        <input type="text" id="regPhone" placeholder="Phone Number" data-i18n-placeholder="account.placeholder.phone" required>
+        <div class="field-hint" data-i18n="hint.regphone">This becomes your registered mobile number — please use the same one on Blood Donation, Stem Cell, and other forms.</div>
+        <select id="regDistrict" required>
+          <option value="" disabled selected data-i18n="account.placeholder.district">Select District</option>
+          <option>Kannur</option>
+          <option>Thrissur</option>
+          <option>Ernakulam</option>
+          <option>Palakkad</option>
+          <option>Malappuram</option>
+          <option>Kottayam</option>
+          <option data-i18n="account.district.other">Other</option>
+        </select>
+        <input type="password" id="regPassword" placeholder="Create Password" data-i18n-placeholder="account.placeholder.createpw" required>
+        <button type="submit" class="btn" data-i18n="account.btn.register">Register</button>
+      </form>
+      <div id="registerMsg"></div>
+    </div>
+
+    <div class="card hidden" id="loginCard" style="max-width:460px;margin:0 auto;">
+      <form id="loginForm">
+        <input type="email" id="loginEmail" placeholder="Email Address" data-i18n-placeholder="account.placeholder.email">
+        <input type="password" id="loginPassword" placeholder="Password" data-i18n-placeholder="account.placeholder.password">
+        <input type="password" id="loginAdminCode" placeholder="Admin Access Code (leave blank if not admin)" data-i18n-placeholder="account.placeholder.admincode" autocomplete="off">
+        <button type="submit" class="btn" data-i18n="account.btn.login">Login</button>
+      </form>
+      <div id="loginMsg"></div>
+    </div>
+
+    <div class="card member-area hidden" id="memberArea" style="max-width:460px;margin:26px auto 0;">
+      <h3><span data-i18n="account.welcome">Welcome,</span> <span id="memberName"></span> 🙏</h3>
+      <p data-i18n="account.loggedin">You're logged in as a registered member of Yogakshema Sabha.</p>
+      <p><a class="btn" href="#" onclick="alert('This would link to member resources, newsletters, or event registration in the full version.'); return false;" data-i18n="account.resources">Access Member Resources</a></p>
+      <p><button class="tab-btn" onclick="logout()" data-i18n="account.logout">Logout</button></p>
+    </div>
+
+    <div class="card hidden" id="adminDashboard" style="max-width:760px;margin:26px auto 0;">
+      <div class="admin-banner" data-i18n="admin.granted">🔒 Admin Access Granted</div>
+      <h3 style="margin-top:18px;" data-i18n="admin.members">Registered Members</h3>
+      <div class="table-wrap">
+        <table id="membersTable">
+          <thead><tr><th>Name</th><th>Email</th><th>Phone</th><th>District</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <div id="noMembersMsg" class="note hidden">No members have registered in this session yet.</div>
+
+      <h3 data-i18n="admin.messages">Contact Messages</h3>
+      <div class="table-wrap">
+        <table id="messagesTable">
+          <thead><tr><th>Name</th><th>Email</th><th>Message</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <div id="noMessagesMsg" class="note hidden">No contact messages in this session yet.</div>
+
+      <h3 data-i18n="admin.blood">Blood Donors</h3>
+      <div class="table-wrap">
+        <table id="adminBloodTable">
+          <thead><tr><th>Name</th><th>Blood Group</th><th>District</th><th>Phone</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+
+      <h3 data-i18n="admin.stemcell">Stem Cell Donors</h3>
+      <div class="table-wrap">
+        <table id="adminStemCellTable">
+          <thead><tr><th>Name</th><th>Age</th><th>District</th><th>Phone</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+
+      <h3 data-i18n="admin.requests">Blood / Stem Cell Requests</h3>
+      <div class="table-wrap">
+        <table id="adminRequestsTable">
+          <thead><tr><th>Type</th><th>Patient</th><th>Hospital</th><th>Contact</th><th>Urgency</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+
+      <h3 data-i18n="admin.matrimony">Matrimony Profiles</h3>
+      <div class="table-wrap">
+        <table id="adminMatrimonyTable">
+          <thead><tr><th>Name</th><th>Age</th><th>Gender</th><th>District</th><th>Contact</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+
+      <h3 data-i18n="admin.jobapps">Job Applications</h3>
+      <div class="table-wrap">
+        <table id="adminJobAppsTable">
+          <thead><tr><th>Job</th><th>Name</th><th>Email</th><th>Phone</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+
+      <p style="margin-top:18px;"><button class="tab-btn" onclick="exitAdminMode()" data-i18n="admin.exit">Exit Admin View</button></p>
+    </div>
+
+    <div class="note" style="max-width:460px;margin:20px auto 0;" data-i18n="account.note1">
+      Prototype note: registration/login here is a front-end demo only. Data is stored in memory for this browser session and is not saved permanently or sent anywhere. A real deployment would need a backend/database (e.g. Firebase, Supabase, or a custom server) to persist member accounts securely.
+    </div>
+    <div class="note admin-warning" style="max-width:460px;margin:14px auto 0;" data-i18n="account.note2">
+      ⚠️ Security note: the admin code here is hardcoded in this file's JavaScript, which means anyone who views the page source can find it. This is fine for a demo, but a real admin system needs the check done on a server (with the code kept secret in an environment variable, never shipped to the browser) plus proper authentication — not a client-side code.
+    </div>
+  </section>
+</div>
+
+<!-- CONTACT -->
+<div id="contact" class="hidden">
+  <section>
+    <div class="section-title">
+      <div class="eyebrow" data-i18n="contact.eyebrow">Get in Touch</div>
+      <h2 data-i18n="contact.h2">Contact Us</h2>
+      <div class="divider"><span class="line"></span><span class="flame-mini"></span><span class="line"></span></div>
+    </div>
+    <div class="contact-grid">
+      <div class="card reveal">
+        <h3 data-i18n="contact.reachout">Reach Out</h3>
+        <p><strong data-i18n="contact.email.label">Email:</strong> info@yogakshemasabha.org</p>
+        <p><strong data-i18n="contact.phone.label">Phone:</strong> +91 XXXX XXX XXX</p>
+        <p><strong data-i18n="contact.focal.label">Focal Centre:</strong> Thrissur, Kerala, India</p>
+        <p data-i18n="contact.p1">Local activities are coordinated through district-level Jilla Samithis across Kerala, including Thrissur, Ernakulam, Palakkad, and Malappuram.</p>
+      </div>
+      <div class="card reveal">
+        <h3 data-i18n="contact.sendmsg">Send a Message</h3>
+        <form id="contactForm">
+          <input type="text" id="contactName" placeholder="Your Name" data-i18n-placeholder="contact.placeholder.name" required>
+          <input type="email" id="contactEmail" placeholder="Your Email" data-i18n-placeholder="contact.placeholder.email" required>
+          <input type="text" id="contactMessage" placeholder="Message" data-i18n-placeholder="contact.placeholder.message">
+          <button type="submit" class="btn" data-i18n="contact.send">Send</button>
+        </form>
+        <div id="contactMsg"></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="kasavu-strip"></div>
+<footer>
+  <p data-i18n="footer.p1">Yogakshema Sabha Yuvajanasabha, Kannur District</p>
+  <p data-i18n="footer.p2">Over a century of tradition since 1908, with renewed vigour from 1976 onward.</p>
+  <p data-i18n="footer.p3">This is a simple prototype website built for demonstration purposes. Replace placeholder details with your chapter's real information.</p>
+</footer>
+
+<script>
+  // Simple in-memory "database" for this session (prototype only — no backend, no persistence).
+  const users = {};
+  const contactMessages = [];
+  let currentUser = null;
+
+  // DEMO ONLY: change this before sharing the file, and never rely on this for real security —
+  // anyone can view the page source and read this value. A real admin login must be checked
+  // on a server, with the code/credentials kept secret and never sent to the browser.
+  const ADMIN_CODE = 'YKS-ADMIN-2026';
+
+  // Admin Mode: unlocked site-wide once the correct code is entered. Only the Events
+  // panel becomes editable in this mode — everything else on the site stays as-is.
+  let isAdminMode = false;
+  let currentEventsTab = 'done';
+  let eventIdCounter = 1;
+
+  let eventsData = {
+    done: [
+      {id: eventIdCounter++, date:'Jan 2024', title:'Annual Convention', desc:'Yearly gathering of Yuvajanasabha members from across Kannur District, with cultural programs and felicitations.'},
+      {id: eventIdCounter++, date:'Aug 2023', title:'Scholarship Distribution', desc:'Educational scholarships awarded to deserving students from member families within the district.'},
+      {id: eventIdCounter++, date:'Mar 2023', title:'Family Union Meet', desc:'A get-together for member families to strengthen community bonds and welcome new members.'}
+    ],
+    planned: [
+      {id: eventIdCounter++, date:'2026', title:'Youth Leadership Meet', desc:'A district-wide program to develop leadership and organisational skills among young Yuvajanasabha members.'},
+      {id: eventIdCounter++, date:'2026', title:'Career Guidance Workshop', desc:'Sessions connecting students and young professionals with mentors from within the community.'},
+      {id: eventIdCounter++, date:'2027', title:'Cultural Heritage Festival', desc:'A larger district event celebrating traditional art forms, music, and rituals of the community.'}
+    ]
+  };
+
+  // ================= LANGUAGE / TRANSLATIONS =================
+  let currentLang = 'en';
+
+  const translations = {
+    en: {
+      'logo.sub': 'Yuvajanasabha · Kannur District',
+      'nav.home': 'Home', 'nav.history': 'History', 'nav.objectives': 'Objectives',
+      'nav.committee': 'Committee', 'nav.events': 'Events', 'nav.account': 'Register / Login', 'nav.contact': 'Contact',
+      'admin.bar.text': '🔒 Admin Mode is ON — you can add/edit/delete events on the Events page',
+      'admin.bar.goto': 'Go to Events', 'admin.bar.exit': 'Exit Admin Mode',
+      'hero.eyebrow': 'Yuvajanasabha · Kannur District',
+      'hero.lede': 'The youth wing of Yogakshema Sabha, Kannur District — carrying forward unity, tradition, education, and social welfare for the next generation.',
+      'hero.cta.member': 'Become a Member', 'hero.cta.history': 'Learn Our History',
+      'fact.founded': 'Founded', 'fact.years': 'Years of Service', 'fact.reorganised': 'Reorganised', 'fact.districts': 'District Samithis',
+      'about.eyebrow': 'About Us', 'about.h2': 'Who We Are',
+      'about.p1': 'Yogakshema Sabha is a socio-cultural organisation of the Namboothiri community of Kerala. It was first founded in 1908 (as the Namboothiri Yogakshema Mahaasabha) with the aim of promoting education, social reform, and welfare within the community.',
+      'about.p2': 'After a period of decline around the 1950s, the Sabha was reorganised and re-registered on 7 April 1976, with Thrissur as its focal centre, continuing its founding mission with renewed vigour.',
+      'about.p3': '<strong>Our mission</strong> is to support the social, financial, educational, and cultural development of our members — while preserving cultural values and encouraging community unity across generations.',
+      'about.p4': 'Today, the Sabha operates through district-level committees (Jilla Samithis) across Kerala, each carrying forward local activities under the common banner of the Sabha.',
+      'activities.eyebrow': 'What We Do', 'activities.h2': 'Our Activities',
+      'activities.education.h3': 'Education',
+      'activities.education.p': 'Support for schools, scholarships, and study classes to encourage modern education among members.',
+      'activities.welfare.h3': 'Social Welfare',
+      'activities.welfare.p': 'Assistance with rituals and life-events ("Shodasakriya"), family support, and community welfare programs.',
+      'activities.events.h3': 'Community Events',
+      'activities.events.p': 'Annual conventions, district-level gatherings, family unions, and cultural programs held each year.',
+      'history.eyebrow': 'Our Journey', 'history.h2': 'History &amp; Milestones',
+      'history.year2': 'Early 1900s',
+      'history.item1': "A large gathering of Namboothiris met at Cherumukku Vaidikan's Illam on the banks of the Periyar river on Mahasivarathri day, giving birth to the Namboothiri Yogakshema Mahaasabha, focused on eradicating illiteracy and promoting modern education.",
+      'history.item2': 'The Sabha launched the monthly journal "Yogakshemam" and later "Mangalodayam Maasika", and established a library-cum-reading room at Thrissur that became a favourite place for researchers.',
+      'history.item3': 'The original Namboothiri Yogakshema Sabha, which had looked after community welfare in pre-independence days, was dissolved.',
+      'history.item4': "A few Namboothiris met informally at the Namboothiri Vidyalayam, Thrissur, to discuss reviving the organisation for the community's general upliftment.",
+      'history.item5': 'Yogakshema Sabha was formally registered with Thrissur as its focal centre, open to all members of the Namboothiri community as defined under the Namboothiri Act of 1958.',
+      'history.item6': 'Nearly a thousand members marched from the University of Kerala to the Secretariat in Thiruvananthapuram, presenting a petition of 47 requisites to the government — a tradition of anniversary demonstrations that followed in later years.',
+      'history.item7': 'Permission was granted for a college at Sreekrishnapuram, a direct outcome of an earlier demonstrational procession organised by the Sabha.',
+      'history.note': "Historical details are summarised from publicly available sources on the Sabha's history, including namboothiri.com. Exact details may vary slightly between regional chapters.",
+      'objectives.eyebrow': 'Our Purpose', 'objectives.h2': 'Aims &amp; Objectives',
+      'objectives.item1': 'Promote the general social, financial, and cultural wellbeing of the community.',
+      'objectives.item2': 'Assist members with the performance of traditional rituals ("Shodasakriya").',
+      'objectives.item3': 'Encourage and support modern educational development among members.',
+      'objectives.item4': 'Improve employment prospects and financial self-reliance for the community.',
+      'objectives.item5': 'Preserve cultural values and spiritual traditions across generations.',
+      'objectives.item6': 'Organise district-level conventions, family unions, and study classes.',
+      'objectives.item7': 'Represent community interests before the government where needed.',
+      'committee.eyebrow': 'Leadership', 'committee.h2': 'Managing Committee',
+      'committee.president': 'President', 'committee.secretary': 'General Secretary', 'committee.treasurer': 'Treasurer',
+      'committee.officebearer': 'Office Bearer',
+      'committee.note': "These are placeholder roles for the prototype. Replace with your local Jilla Samithi's actual committee member names and photos.",
+      'committee.taptoflip': 'Tap to flip',
+      'committee.back': "Part of the Kannur District Yuvajanasabha managing committee, helping guide the organisation's activities and represent members.",
+      'events.eyebrow': 'Milestones &amp; Plans', 'events.h2': 'Events Done &amp; Events Planned',
+      'events.tab.done': 'Events Done', 'events.tab.planned': 'Events Planned', 'events.addbtn': '+ Add Event',
+      'events.note': 'Prototype note: these are placeholder events. In Admin Mode, you can add, edit, or delete events directly on this page — no code editing needed.',
+      'events.modal.save': 'Save Event', 'events.modal.cancel': 'Cancel',
+      'account.eyebrow': 'Membership', 'account.h2': 'Register or Login',
+      'account.tab.register': 'Register', 'account.tab.login': 'Login',
+      'account.placeholder.name': 'Full Name', 'account.placeholder.email': 'Email Address',
+      'account.placeholder.phone': 'Phone Number', 'account.placeholder.district': 'Select District',
+      'account.placeholder.createpw': 'Create Password', 'account.placeholder.password': 'Password',
+      'account.placeholder.admincode': 'Admin Access Code (leave blank if not admin)',
+      'account.district.other': 'Other',
+      'account.btn.register': 'Register', 'account.btn.login': 'Login',
+      'account.welcome': 'Welcome,', 'account.loggedin': "You're logged in as a registered member of Yogakshema Sabha.",
+      'account.resources': 'Access Member Resources', 'account.logout': 'Logout',
+      'admin.granted': '🔒 Admin Access Granted', 'admin.members': 'Registered Members', 'admin.messages': 'Contact Messages',
+      'admin.exit': 'Exit Admin View',
+      'account.note1': 'Prototype note: registration/login here is a front-end demo only. Data is stored in memory for this browser session and is not saved permanently or sent anywhere. A real deployment would need a backend/database (e.g. Firebase, Supabase, or a custom server) to persist member accounts securely.',
+      'account.note2': "⚠️ Security note: the admin code here is hardcoded in this file's JavaScript, which means anyone who views the page source can find it. This is fine for a demo, but a real admin system needs the check done on a server (with the code kept secret in an environment variable, never shipped to the browser) plus proper authentication — not a client-side code.",
+      'contact.eyebrow': 'Get in Touch', 'contact.h2': 'Contact Us', 'contact.reachout': 'Reach Out',
+      'contact.email.label': 'Email:', 'contact.phone.label': 'Phone:', 'contact.focal.label': 'Focal Centre:',
+      'contact.p1': 'Local activities are coordinated through district-level Jilla Samithis across Kerala, including Thrissur, Ernakulam, Palakkad, and Malappuram.',
+      'contact.sendmsg': 'Send a Message',
+      'contact.placeholder.name': 'Your Name', 'contact.placeholder.email': 'Your Email', 'contact.placeholder.message': 'Message',
+      'contact.send': 'Send',
+      'footer.p1': 'Yogakshema Sabha Yuvajanasabha, Kannur District',
+      'footer.p2': 'Over a century of tradition since 1908, with renewed vigour from 1976 onward.',
+      'footer.p3': "This is a simple prototype website built for demonstration purposes. Replace placeholder details with your chapter's real information.",
+      'msg.reg.duplicate': 'An account with this email already exists. Please login instead.',
+      'msg.reg.success': 'Registration successful! You can now login using your email and password.',
+      'msg.login.admincode.invalid': 'Invalid admin code.',
+      'msg.login.invalid': 'Invalid email or password.',
+      'msg.contact.success': 'Thank you! Your message has been noted (demo only — not actually emailed).',
+      'nav.blood': 'Blood Donation', 'nav.stemcell': 'Stem Cell', 'nav.request': 'Request Help',
+      'nav.matrimony': 'Matrimony', 'nav.jobs': 'Jobs',
+      'table.name': 'Name', 'table.district': 'District', 'table.phone': 'Phone', 'table.none': 'None yet.',
+      'blood.eyebrow': 'Save a Life', 'blood.h2': 'Blood Donation',
+      'blood.why.h3': 'Why Register?',
+      'blood.why.p1': "Our blood donor directory connects willing donors within the community to members in urgent need. One registration can help save a life at a moment's notice.",
+      'blood.why.p2': '<strong>Eligibility:</strong> Generally age 18–65, weight above 50kg, and in good health. Please consult a doctor if unsure.',
+      'blood.register.h3': 'Register as a Blood Donor', 'blood.placeholder.group': 'Blood Group',
+      'blood.register.btn': 'Register as Donor', 'blood.registered.h2': 'Registered Donors',
+      'blood.filter.all': 'All Blood Groups', 'blood.table.group': 'Blood Group',
+      'blood.note': "Prototype note: donor registrations are stored in memory for this browser session only. A real deployment would need a database so donors stay registered permanently and phone numbers are only shown to verified members, not the public.",
+      'stemcell.eyebrow': 'Give Someone a Second Chance', 'stemcell.h2': 'Stem Cell Donation',
+      'stemcell.about.h3': 'About Stem Cell Donation',
+      'stemcell.about.p1': "Stem cell (bone marrow) donation can be life-saving for patients with blood cancers and certain genetic disorders. Registering only requires a simple cheek swab — you're contacted only if you're found to be a match for a patient.",
+      'stemcell.about.p2': '<strong>Eligibility:</strong> Generally age 18–50 and in good general health.',
+      'stemcell.register.h3': 'Register as a Potential Donor', 'stemcell.placeholder.age': 'Age',
+      'stemcell.register.btn': 'Register Interest', 'stemcell.registered.h2': 'Registered Potential Donors',
+      'stemcell.table.age': 'Age',
+      'stemcell.note': 'Prototype note: this only registers interest. A real registry would need medical coordination with an accredited stem cell/bone marrow donor program, and data stored securely and permanently.',
+      'request.eyebrow': 'Need Help?', 'request.h2': 'Request Blood or Stem Cell Donation',
+      'request.placeholder.type': 'What do you need?', 'request.type.blood': 'Blood Donation', 'request.type.stemcell': 'Stem Cell Donation',
+      'request.placeholder.patient': 'Patient Name', 'request.placeholder.bloodgroup': 'Blood Group Needed (if applicable)',
+      'request.placeholder.hospital': 'Hospital Name & Location', 'request.placeholder.contact': 'Contact Number',
+      'request.placeholder.urgency': 'Urgency', 'request.urgency.immediate': 'Immediate (within 24 hrs)',
+      'request.urgency.week': 'This Week', 'request.urgency.planned': 'Planned / Not Urgent',
+      'request.placeholder.notes': 'Additional Notes (optional)', 'request.submit': 'Submit Request',
+      'request.note': 'Prototype note: requests are visible to admins only (via Admin Mode) in this demo. A real deployment would notify matching donors directly — for example by SMS or email — and should never be relied on for genuine medical emergencies; always contact a hospital or blood bank directly for urgent needs.',
+      'matrimony.eyebrow': 'Community Matrimony', 'matrimony.h2': 'Matrimony', 'matrimony.create.h3': 'Create a Profile',
+      'matrimony.placeholder.gender': 'Gender', 'matrimony.gender.male': 'Male', 'matrimony.gender.female': 'Female',
+      'matrimony.placeholder.education': 'Education', 'matrimony.placeholder.profession': 'Profession',
+      'matrimony.placeholder.contact': 'Contact Email', 'matrimony.submit': 'Submit Profile',
+      'matrimony.browse.h2': 'Browse Profiles',
+      'matrimony.note': 'Prototype note: profiles are shown publicly here for demo purposes only. A real deployment must gate contact details behind verified member logins for privacy and safety, and include profile moderation.',
+      'jobs.eyebrow': 'Careers', 'jobs.h2': 'Search &amp; Apply for Jobs',
+      'jobs.search.placeholder': 'Search by title, company, or location...', 'jobs.none': 'No jobs match your search.',
+      'jobs.apply.title': 'Apply for Job', 'jobs.apply.resume': 'Resume Link (Google Drive, LinkedIn, etc.)',
+      'jobs.apply.note': 'Why are you a good fit? (optional)', 'jobs.apply.submit': 'Submit Application',
+      'jobs.applybtn': 'Apply Now', 'jobs.applied.alert': 'Application submitted for',
+      'admin.blood': 'Blood Donors', 'admin.stemcell': 'Stem Cell Donors', 'admin.requests': 'Blood / Stem Cell Requests',
+      'admin.matrimony': 'Matrimony Profiles', 'admin.jobapps': 'Job Applications',
+      'msg.blood.success': 'Thank you for registering as a blood donor!',
+      'msg.stemcell.success': 'Thank you for registering your interest!',
+      'msg.request.success': 'Your request has been submitted. Our team will try to connect you with a matching donor.',
+      'msg.matrimony.success': 'Your profile has been submitted!',
+      'marquee.unity': 'Unity', 'marquee.tradition': 'Tradition',
+      'marquee.education': 'Education', 'marquee.welfare': 'Welfare',
+      'hint.phone': "Please use your registered mobile number, so it's easier to match with our records.",
+      'hint.regphone': 'This becomes your registered mobile number — please use the same one on Blood Donation, Stem Cell, and other forms.'
+    },
+    ml: {
+      'logo.sub': 'യുവജനസഭ · കണ്ണൂർ ജില്ല',
+      'nav.home': 'ഹോം', 'nav.history': 'ചരിത്രം', 'nav.objectives': 'ലക്ഷ്യങ്ങൾ',
+      'nav.committee': 'കമ്മിറ്റി', 'nav.events': 'പരിപാടികൾ', 'nav.account': 'രജിസ്റ്റർ / ലോഗിൻ', 'nav.contact': 'ബന്ധപ്പെടുക',
+      'admin.bar.text': '🔒 അഡ്മിൻ മോഡ് ഓണാണ് — പരിപാടികൾ പേജിൽ നിങ്ങൾക്ക് ഇവന്റുകൾ ചേർക്കാം / തിരുത്താം / നീക്കം ചെയ്യാം',
+      'admin.bar.goto': 'പരിപാടികളിലേക്ക് പോകുക', 'admin.bar.exit': 'അഡ്മിൻ മോഡിൽ നിന്ന് പുറത്തുകടക്കുക',
+      'hero.eyebrow': 'യുവജനസഭ · കണ്ണൂർ ജില്ല',
+      'hero.lede': 'കണ്ണൂർ ജില്ലയിലെ യോഗക്ഷേമ സഭയുടെ യുവജനവിഭാഗം — അടുത്ത തലമുറയ്ക്കായി ഐക്യം, പാരമ്പര്യം, വിദ്യാഭ്യാസം, സാമൂഹിക ക്ഷേമം എന്നിവ മുന്നോട്ട് കൊണ്ടുപോകുന്നു.',
+      'hero.cta.member': 'അംഗമാകുക', 'hero.cta.history': 'ഞങ്ങളുടെ ചരിത്രം അറിയുക',
+      'fact.founded': 'സ്ഥാപിതം', 'fact.years': 'സേവന വർഷങ്ങൾ', 'fact.reorganised': 'പുനഃസംഘടിപ്പിച്ചു', 'fact.districts': 'ജില്ലാ സമിതികൾ',
+      'about.eyebrow': 'ഞങ്ങളെക്കുറിച്ച്', 'about.h2': 'ഞങ്ങൾ ആരാണ്',
+      'about.p1': 'യോഗക്ഷേമ സഭ കേരളത്തിലെ നമ്പൂതിരി സമുദായത്തിന്റെ ഒരു സാമൂഹിക-സാംസ്കാരിക സംഘടനയാണ്. വിദ്യാഭ്യാസം, സാമൂഹിക പരിഷ്കരണം, സമുദായ ക്ഷേമം എന്നിവ പ്രോത്സാഹിപ്പിക്കുക എന്ന ലക്ഷ്യത്തോടെ 1908-ൽ (നമ്പൂതിരി യോഗക്ഷേമ മഹാസഭ എന്ന പേരിൽ) ഇത് ആദ്യമായി സ്ഥാപിതമായി.',
+      'about.p2': '1950-കളിൽ ഉണ്ടായ തളർച്ചയ്ക്ക് ശേഷം, 1976 ഏപ്രിൽ 7-ന് തൃശ്ശൂർ കേന്ദ്രമാക്കി സഭ പുനഃസംഘടിപ്പിക്കുകയും വീണ്ടും രജിസ്റ്റർ ചെയ്യുകയും ചെയ്തു, പുതിയ ഊർജ്ജത്തോടെ സ്ഥാപക ലക്ഷ്യം തുടർന്നു.',
+      'about.p3': '<strong>ഞങ്ങളുടെ ദൗത്യം</strong> അംഗങ്ങളുടെ സാമൂഹികവും സാമ്പത്തികവും വിദ്യാഭ്യാസപരവും സാംസ്കാരികവുമായ വികസനത്തെ പിന്തുണയ്ക്കുക എന്നതാണ് — സാംസ്കാരിക മൂല്യങ്ങൾ സംരക്ഷിച്ചും തലമുറകളിലുടനീളം സാമുദായിക ഐക്യം പ്രോത്സാഹിപ്പിച്ചും.',
+      'about.p4': 'ഇന്ന്, കേരളത്തിലുടനീളമുള്ള ജില്ലാതല സമിതികളിലൂടെ (ജില്ലാ സമിതികൾ) സഭ പ്രവർത്തിക്കുന്നു, ഓരോന്നും സഭയുടെ പൊതു ബാനറിന് കീഴിൽ പ്രാദേശിക പ്രവർത്തനങ്ങൾ മുന്നോട്ട് കൊണ്ടുപോകുന്നു.',
+      'activities.eyebrow': 'ഞങ്ങൾ എന്ത് ചെയ്യുന്നു', 'activities.h2': 'ഞങ്ങളുടെ പ്രവർത്തനങ്ങൾ',
+      'activities.education.h3': 'വിദ്യാഭ്യാസം',
+      'activities.education.p': 'അംഗങ്ങൾക്കിടയിൽ ആധുനിക വിദ്യാഭ്യാസം പ്രോത്സാഹിപ്പിക്കുന്നതിനായി സ്കൂളുകൾ, സ്കോളർഷിപ്പുകൾ, പഠന ക്ലാസുകൾ എന്നിവയ്ക്കുള്ള പിന്തുണ.',
+      'activities.welfare.h3': 'സാമൂഹിക ക്ഷേമം',
+      'activities.welfare.p': 'ആചാരങ്ങൾക്കും ജീവിത സംഭവങ്ങൾക്കുമുള്ള സഹായം ("ഷോഡശക്രിയ"), കുടുംബ പിന്തുണ, സാമൂഹിക ക്ഷേമ പരിപാടികൾ.',
+      'activities.events.h3': 'സാമൂഹിക പരിപാടികൾ',
+      'activities.events.p': 'വാർഷിക സമ്മേളനങ്ങൾ, ജില്ലാതല സംഗമങ്ങൾ, കുടുംബ സംഗമങ്ങൾ, എല്ലാ വർഷവും നടക്കുന്ന സാംസ്കാരിക പരിപാടികൾ.',
+      'history.eyebrow': 'ഞങ്ങളുടെ യാത്ര', 'history.h2': 'ചരിത്രവും നാഴികക്കല്ലുകളും',
+      'history.year2': 'ഇരുപതാം നൂറ്റാണ്ടിന്റെ തുടക്കം',
+      'history.item1': 'മഹാശിവരാത്രി ദിനത്തിൽ പെരിയാർ നദിക്കരയിലുള്ള ചെറുമുക്ക് വൈദികന്റെ ഇല്ലത്ത് നമ്പൂതിരിമാരുടെ ഒരു വലിയ സമ്മേളനം നടന്നു, ഇത് നിരക്ഷരത നിർമാർജനം ചെയ്യുന്നതിലും ആധുനിക വിദ്യാഭ്യാസം പ്രോത്സാഹിപ്പിക്കുന്നതിലും ശ്രദ്ധ കേന്ദ്രീകരിച്ച നമ്പൂതിരി യോഗക്ഷേമ മഹാസഭയ്ക്ക് ജന്മം നൽകി.',
+      'history.item2': 'സഭ "യോഗക്ഷേമം" എന്ന മാസികയും പിന്നീട് "മംഗളോദയം മാസിക"യും ആരംഭിച്ചു, തൃശ്ശൂരിൽ ഗവേഷകരുടെ പ്രിയപ്പെട്ട ഇടമായി മാറിയ ഒരു ലൈബ്രറി-വായനശാലയും സ്ഥാപിച്ചു.',
+      'history.item3': 'സ്വാതന്ത്ര്യത്തിന് മുൻപുള്ള കാലത്ത് സാമുദായിക ക്ഷേമം നോക്കിയിരുന്ന യഥാർത്ഥ നമ്പൂതിരി യോഗക്ഷേമ സഭ പിരിച്ചുവിടപ്പെട്ടു.',
+      'history.item4': 'സമുദായത്തിന്റെ പൊതു ഉന്നമനത്തിനായി സംഘടനയെ പുനരുജ്ജീവിപ്പിക്കുന്നതിനെക്കുറിച്ച് ചർച്ച ചെയ്യാൻ ചില നമ്പൂതിരിമാർ തൃശ്ശൂർ നമ്പൂതിരി വിദ്യാലയത്തിൽ അനൗപചാരികമായി കൂടിക്കാഴ്ച നടത്തി.',
+      'history.item5': '1958-ലെ നമ്പൂതിരി നിയമപ്രകാരം നിർവചിക്കപ്പെട്ട നമ്പൂതിരി സമുദായത്തിലെ എല്ലാ അംഗങ്ങൾക്കും തുറന്ന നിലയിൽ, തൃശ്ശൂർ കേന്ദ്രമാക്കി യോഗക്ഷേമ സഭ ഔപചാരികമായി രജിസ്റ്റർ ചെയ്യപ്പെട്ടു.',
+      'history.item6': 'ആയിരത്തോളം അംഗങ്ങൾ കേരള സർവകലാശാലയിൽ നിന്ന് തിരുവനന്തപുരത്തെ സെക്രട്ടേറിയറ്റിലേക്ക് മാർച്ച് നടത്തി, 47 ആവശ്യങ്ങളുടെ ഒരു നിവേദനം സർക്കാരിന് സമർപ്പിച്ചു — പിന്നീടുള്ള വർഷങ്ങളിൽ തുടർന്ന വാർഷിക പ്രകടനങ്ങളുടെ ഒരു പാരമ്പര്യം.',
+      'history.item7': 'സഭ സംഘടിപ്പിച്ച മുൻകാല പ്രകടന ജാഥയുടെ നേരിട്ടുള്ള ഫലമായി ശ്രീകൃഷ്ണപുരത്ത് ഒരു കോളേജിന് അനുമതി ലഭിച്ചു.',
+      'history.note': 'namboothiri.com ഉൾപ്പെടെ, സഭയുടെ ചരിത്രത്തെക്കുറിച്ച് പൊതുവായി ലഭ്യമായ സ്രോതസ്സുകളിൽ നിന്നാണ് ചരിത്രപരമായ വിവരങ്ങൾ സംഗ്രഹിച്ചിരിക്കുന്നത്. കൃത്യമായ വിവരങ്ങൾ പ്രാദേശിക ഘടകങ്ങൾക്കിടയിൽ അല്പം വ്യത്യാസപ്പെടാം.',
+      'objectives.eyebrow': 'ഞങ്ങളുടെ ലക്ഷ്യം', 'objectives.h2': 'ലക്ഷ്യങ്ങളും ഉദ്ദേശ്യങ്ങളും',
+      'objectives.item1': 'സമുദായത്തിന്റെ പൊതു സാമൂഹികവും സാമ്പത്തികവും സാംസ്കാരികവുമായ ക്ഷേമം പ്രോത്സാഹിപ്പിക്കുക.',
+      'objectives.item2': 'പരമ്പരാഗത ആചാരങ്ങൾ ("ഷോഡശക്രിയ") നടത്തുന്നതിൽ അംഗങ്ങളെ സഹായിക്കുക.',
+      'objectives.item3': 'അംഗങ്ങൾക്കിടയിൽ ആധുനിക വിദ്യാഭ്യാസ വികസനത്തെ പ്രോത്സാഹിപ്പിക്കുകയും പിന്തുണയ്ക്കുകയും ചെയ്യുക.',
+      'objectives.item4': 'സമുദായത്തിന്റെ തൊഴിൽ സാധ്യതകളും സാമ്പത്തിക സ്വാശ്രയത്വവും മെച്ചപ്പെടുത്തുക.',
+      'objectives.item5': 'തലമുറകളിലുടനീളം സാംസ്കാരിക മൂല്യങ്ങളും ആത്മീയ പാരമ്പര്യങ്ങളും സംരക്ഷിക്കുക.',
+      'objectives.item6': 'ജില്ലാതല സമ്മേളനങ്ങൾ, കുടുംബ സംഗമങ്ങൾ, പഠന ക്ലാസുകൾ എന്നിവ സംഘടിപ്പിക്കുക.',
+      'objectives.item7': 'ആവശ്യമുള്ളപ്പോൾ സർക്കാരിന് മുന്നിൽ സാമുദായിക താൽപ്പര്യങ്ങളെ പ്രതിനിധീകരിക്കുക.',
+      'committee.eyebrow': 'നേതൃത്വം', 'committee.h2': 'ഭരണസമിതി',
+      'committee.president': 'പ്രസിഡന്റ്', 'committee.secretary': 'ജനറൽ സെക്രട്ടറി', 'committee.treasurer': 'ട്രഷറർ',
+      'committee.officebearer': 'ഭാരവാഹി',
+      'committee.note': 'ഇവ പ്രോട്ടോടൈപ്പിനായുള്ള സാങ്കൽപ്പിക റോളുകളാണ്. നിങ്ങളുടെ പ്രാദേശിക ജില്ലാ സമിതിയുടെ യഥാർത്ഥ കമ്മിറ്റി അംഗങ്ങളുടെ പേരുകളും ഫോട്ടോകളും ഉപയോഗിച്ച് മാറ്റിസ്ഥാപിക്കുക.',
+      'committee.taptoflip': 'ഫ്ലിപ്പ് ചെയ്യാൻ ടാപ്പ് ചെയ്യുക',
+      'committee.back': 'കണ്ണൂർ ജില്ലാ യുവജനസഭയുടെ ഭരണസമിതിയുടെ ഭാഗം, സംഘടനയുടെ പ്രവർത്തനങ്ങൾക്ക് നേതൃത്വം നൽകുകയും അംഗങ്ങളെ പ്രതിനിധീകരിക്കുകയും ചെയ്യുന്നു.',
+      'events.eyebrow': 'നാഴികക്കല്ലുകളും പദ്ധതികളും', 'events.h2': 'നടന്ന പരിപാടികളും ആസൂത്രിത പരിപാടികളും',
+      'events.tab.done': 'നടന്ന പരിപാടികൾ', 'events.tab.planned': 'ആസൂത്രിത പരിപാടികൾ', 'events.addbtn': '+ പരിപാടി ചേർക്കുക',
+      'events.note': 'പ്രോട്ടോടൈപ്പ് കുറിപ്പ്: ഇവ സാങ്കൽപ്പിക പരിപാടികളാണ്. അഡ്മിൻ മോഡിൽ, കോഡ് തിരുത്താതെ തന്നെ ഈ പേജിൽ നിങ്ങൾക്ക് നേരിട്ട് പരിപാടികൾ ചേർക്കാം, തിരുത്താം, നീക്കം ചെയ്യാം.',
+      'events.modal.save': 'പരിപാടി സേവ് ചെയ്യുക', 'events.modal.cancel': 'റദ്ദാക്കുക',
+      'account.eyebrow': 'അംഗത്വം', 'account.h2': 'രജിസ്റ്റർ ചെയ്യുക അല്ലെങ്കിൽ ലോഗിൻ ചെയ്യുക',
+      'account.tab.register': 'രജിസ്റ്റർ', 'account.tab.login': 'ലോഗിൻ',
+      'account.placeholder.name': 'മുഴുവൻ പേര്', 'account.placeholder.email': 'ഇമെയിൽ വിലാസം',
+      'account.placeholder.phone': 'ഫോൺ നമ്പർ', 'account.placeholder.district': 'ജില്ല തിരഞ്ഞെടുക്കുക',
+      'account.placeholder.createpw': 'പാസ്‌വേഡ് സൃഷ്ടിക്കുക', 'account.placeholder.password': 'പാസ്‌വേഡ്',
+      'account.placeholder.admincode': 'അഡ്മിൻ ആക്സസ് കോഡ് (അഡ്മിൻ അല്ലെങ്കിൽ ശൂന്യമായി വിടുക)',
+      'account.district.other': 'മറ്റുള്ളവ',
+      'account.btn.register': 'രജിസ്റ്റർ ചെയ്യുക', 'account.btn.login': 'ലോഗിൻ ചെയ്യുക',
+      'account.welcome': 'സ്വാഗതം,', 'account.loggedin': 'നിങ്ങൾ യോഗക്ഷേമ സഭയുടെ രജിസ്റ്റർ ചെയ്ത അംഗമായി ലോഗിൻ ചെയ്തിരിക്കുന്നു.',
+      'account.resources': 'അംഗ വിഭവങ്ങൾ ലഭ്യമാക്കുക', 'account.logout': 'ലോഗ്ഔട്ട്',
+      'admin.granted': '🔒 അഡ്മിൻ ആക്‌സസ് അനുവദിച്ചു', 'admin.members': 'രജിസ്റ്റർ ചെയ്ത അംഗങ്ങൾ', 'admin.messages': 'ബന്ധപ്പെടൽ സന്ദേശങ്ങൾ',
+      'admin.exit': 'അഡ്മിൻ വ്യൂ പുറത്തുകടക്കുക',
+      'account.note1': 'പ്രോട്ടോടൈപ്പ് കുറിപ്പ്: ഇവിടെ രജിസ്ട്രേഷൻ/ലോഗിൻ ഒരു ഫ്രണ്ട്-എൻഡ് ഡെമോ മാത്രമാണ്. ഡാറ്റ ഈ ബ്രൗസർ സെഷനുവേണ്ടി മാത്രം മെമ്മറിയിൽ സൂക്ഷിക്കുന്നു, സ്ഥിരമായി സേവ് ചെയ്യുകയോ എവിടെയും അയക്കുകയോ ചെയ്യുന്നില്ല. യഥാർത്ഥ വിന്യാസത്തിന് അംഗത്വ വിവരങ്ങൾ സുരക്ഷിതമായി സൂക്ഷിക്കാൻ ഒരു ബാക്കെൻഡ്/ഡാറ്റാബേസ് (ഉദാ. Firebase, Supabase) ആവശ്യമാണ്.',
+      'account.note2': '⚠️ സുരക്ഷാ കുറിപ്പ്: ഇവിടെയുള്ള അഡ്മിൻ കോഡ് ഈ ഫയലിന്റെ ജാവാസ്ക്രിപ്റ്റിൽ ഹാർഡ്‌കോഡ് ചെയ്തിരിക്കുന്നു, അതായത് പേജ് സോഴ്‌സ് കാണുന്ന ആർക്കും ഇത് കണ്ടെത്താനാകും. ഡെമോയ്ക്ക് ഇത് മതിയാകും, പക്ഷേ യഥാർത്ഥ അഡ്മിൻ സംവിധാനത്തിന് ഈ പരിശോധന സെർവറിൽ ചെയ്യേണ്ടതുണ്ട്.',
+      'contact.eyebrow': 'ബന്ധപ്പെടുക', 'contact.h2': 'ഞങ്ങളെ ബന്ധപ്പെടുക', 'contact.reachout': 'ബന്ധപ്പെടാൻ',
+      'contact.email.label': 'ഇമെയിൽ:', 'contact.phone.label': 'ഫോൺ:', 'contact.focal.label': 'കേന്ദ്ര ഓഫീസ്:',
+      'contact.p1': 'തൃശ്ശൂർ, എറണാകുളം, പാലക്കാട്, മലപ്പുറം ഉൾപ്പെടെ കേരളത്തിലുടനീളമുള്ള ജില്ലാതല ജില്ലാ സമിതികൾ വഴിയാണ് പ്രാദേശിക പ്രവർത്തനങ്ങൾ ഏകോപിപ്പിക്കുന്നത്.',
+      'contact.sendmsg': 'സന്ദേശം അയക്കുക',
+      'contact.placeholder.name': 'നിങ്ങളുടെ പേര്', 'contact.placeholder.email': 'നിങ്ങളുടെ ഇമെയിൽ', 'contact.placeholder.message': 'സന്ദേശം',
+      'contact.send': 'അയക്കുക',
+      'footer.p1': 'യോഗക്ഷേമ സഭ യുവജനസഭ, കണ്ണൂർ ജില്ല',
+      'footer.p2': '1908 മുതലുള്ള ഒരു നൂറ്റാണ്ടിലേറെ പാരമ്പര്യം, 1976 മുതൽ പുതുക്കിയ ഊർജ്ജത്തോടെ.',
+      'footer.p3': 'ഇത് പ്രദർശന ആവശ്യങ്ങൾക്കായി നിർമ്മിച്ച ഒരു ലളിതമായ പ്രോട്ടോടൈപ്പ് വെബ്സൈറ്റാണ്. സാങ്കൽപ്പിക വിവരങ്ങൾക്ക് പകരം നിങ്ങളുടെ ചാപ്റ്ററിന്റെ യഥാർത്ഥ വിവരങ്ങൾ നൽകുക.',
+      'msg.reg.duplicate': 'ഈ ഇമെയിലുള്ള ഒരു അക്കൗണ്ട് നിലവിലുണ്ട്. ദയവായി ലോഗിൻ ചെയ്യുക.',
+      'msg.reg.success': 'രജിസ്ട്രേഷൻ വിജയകരം! ഇപ്പോൾ നിങ്ങളുടെ ഇമെയിലും പാസ്‌വേഡും ഉപയോഗിച്ച് ലോഗിൻ ചെയ്യാം.',
+      'msg.login.admincode.invalid': 'അഡ്മിൻ കോഡ് തെറ്റാണ്.',
+      'msg.login.invalid': 'ഇമെയിൽ അല്ലെങ്കിൽ പാസ്‌വേഡ് തെറ്റാണ്.',
+      'msg.contact.success': 'നന്ദി! നിങ്ങളുടെ സന്ദേശം രേഖപ്പെടുത്തിയിട്ടുണ്ട് (ഡെമോ മാത്രം — യഥാർത്ഥത്തിൽ ഇമെയിൽ ചെയ്തിട്ടില്ല).',
+      'nav.blood': 'രക്തദാനം', 'nav.stemcell': 'സ്റ്റെം സെൽ', 'nav.request': 'സഹായം അഭ്യർത്ഥിക്കുക',
+      'nav.matrimony': 'വിവാഹം', 'nav.jobs': 'ജോലികൾ',
+      'table.name': 'പേര്', 'table.district': 'ജില്ല', 'table.phone': 'ഫോൺ', 'table.none': 'ഇതുവരെ ഇല്ല.',
+      'blood.eyebrow': 'ഒരു ജീവൻ രക്ഷിക്കൂ', 'blood.h2': 'രക്തദാനം',
+      'blood.why.h3': 'എന്തിന് രജിസ്റ്റർ ചെയ്യണം?',
+      'blood.why.p1': 'ഞങ്ങളുടെ രക്തദാതാക്കളുടെ ഡയറക്ടറി സമുദായത്തിലെ സന്നദ്ധരായ ദാതാക്കളെ അടിയന്തിര ആവശ്യമുള്ള അംഗങ്ങളുമായി ബന്ധിപ്പിക്കുന്നു. ഒരു രജിസ്ട്രേഷൻ ഒരു ജീവൻ രക്ഷിക്കാൻ സഹായിക്കും.',
+      'blood.why.p2': '<strong>യോഗ്യത:</strong> സാധാരണയായി 18–65 വയസ്സ്, 50 കിലോയിൽ കൂടുതൽ ഭാരം, നല്ല ആരോഗ്യം ഉണ്ടായിരിക്കണം. ഉറപ്പില്ലെങ്കിൽ ഡോക്ടറെ സമീപിക്കുക.',
+      'blood.register.h3': 'രക്തദാതാവായി രജിസ്റ്റർ ചെയ്യുക', 'blood.placeholder.group': 'രക്തഗ്രൂപ്പ്',
+      'blood.register.btn': 'ദാതാവായി രജിസ്റ്റർ ചെയ്യുക', 'blood.registered.h2': 'രജിസ്റ്റർ ചെയ്ത ദാതാക്കൾ',
+      'blood.filter.all': 'എല്ലാ രക്തഗ്രൂപ്പുകളും', 'blood.table.group': 'രക്തഗ്രൂപ്പ്',
+      'blood.note': 'പ്രോട്ടോടൈപ്പ് കുറിപ്പ്: ദാതാവിന്റെ രജിസ്ട്രേഷനുകൾ ഈ ബ്രൗസർ സെഷനുവേണ്ടി മാത്രം മെമ്മറിയിൽ സൂക്ഷിക്കുന്നു. ദാതാക്കൾ സ്ഥിരമായി രജിസ്റ്റർ ചെയ്യപ്പെടാനും ഫോൺ നമ്പറുകൾ പരിശോധിച്ച അംഗങ്ങൾക്ക് മാത്രം കാണിക്കാനും ഒരു യഥാർത്ഥ വിന്യാസത്തിന് ഡാറ്റാബേസ് ആവശ്യമാണ്.',
+      'stemcell.eyebrow': 'ഒരാൾക്ക് രണ്ടാം അവസരം നൽകൂ', 'stemcell.h2': 'സ്റ്റെം സെൽ ദാനം',
+      'stemcell.about.h3': 'സ്റ്റെം സെൽ ദാനത്തെക്കുറിച്ച്',
+      'stemcell.about.p1': 'സ്റ്റെം സെൽ (ബോൺ മാരോ) ദാനം രക്താർബുദവും ചില ജനിതക രോഗങ്ങളും ഉള്ള രോഗികൾക്ക് ജീവൻ രക്ഷിക്കുന്നതാകാം. രജിസ്റ്റർ ചെയ്യാൻ ഒരു ലളിതമായ കവിൾ സ്വാബ് മാത്രം മതി — ഒരു രോഗിക്ക് പൊരുത്തമുണ്ടെങ്കിൽ മാത്രമേ നിങ്ങളെ ബന്ധപ്പെടുകയുള്ളൂ.',
+      'stemcell.about.p2': '<strong>യോഗ്യത:</strong> സാധാരണയായി 18–50 വയസ്സും പൊതുവായ നല്ല ആരോഗ്യവും.',
+      'stemcell.register.h3': 'സാധ്യതയുള്ള ദാതാവായി രജിസ്റ്റർ ചെയ്യുക', 'stemcell.placeholder.age': 'പ്രായം',
+      'stemcell.register.btn': 'താൽപ്പര്യം രജിസ്റ്റർ ചെയ്യുക', 'stemcell.registered.h2': 'രജിസ്റ്റർ ചെയ്ത സാധ്യതയുള്ള ദാതാക്കൾ',
+      'stemcell.table.age': 'പ്രായം',
+      'stemcell.note': 'പ്രോട്ടോടൈപ്പ് കുറിപ്പ്: ഇത് താൽപ്പര്യം മാത്രമേ രജിസ്റ്റർ ചെയ്യുന്നുള്ളൂ. ഒരു യഥാർത്ഥ രജിസ്ട്രിക്ക് അംഗീകൃത സ്റ്റെം സെൽ/ബോൺ മാരോ ദാതാവ് പ്രോഗ്രാമുമായി മെഡിക്കൽ ഏകോപനം ആവശ്യമാണ്.',
+      'request.eyebrow': 'സഹായം വേണോ?', 'request.h2': 'രക്തം അല്ലെങ്കിൽ സ്റ്റെം സെൽ ദാനം അഭ്യർത്ഥിക്കുക',
+      'request.placeholder.type': 'നിങ്ങൾക്ക് എന്താണ് വേണ്ടത്?', 'request.type.blood': 'രക്തദാനം', 'request.type.stemcell': 'സ്റ്റെം സെൽ ദാനം',
+      'request.placeholder.patient': 'രോഗിയുടെ പേര്', 'request.placeholder.bloodgroup': 'ആവശ്യമായ രക്തഗ്രൂപ്പ് (ബാധകമെങ്കിൽ)',
+      'request.placeholder.hospital': 'ആശുപത്രിയുടെ പേരും സ്ഥലവും', 'request.placeholder.contact': 'ബന്ധപ്പെടേണ്ട നമ്പർ',
+      'request.placeholder.urgency': 'അടിയന്തിരത', 'request.urgency.immediate': 'ഉടനടി (24 മണിക്കൂറിനുള്ളിൽ)',
+      'request.urgency.week': 'ഈ ആഴ്ച', 'request.urgency.planned': 'ആസൂത്രിതം / അടിയന്തിരമല്ല',
+      'request.placeholder.notes': 'അധിക കുറിപ്പുകൾ (ഐച്ഛികം)', 'request.submit': 'അഭ്യർത്ഥന സമർപ്പിക്കുക',
+      'request.note': 'പ്രോട്ടോടൈപ്പ് കുറിപ്പ്: ഈ ഡെമോയിൽ അഭ്യർത്ഥനകൾ അഡ്മിനുകൾക്ക് മാത്രമേ (അഡ്മിൻ മോഡ് വഴി) കാണാൻ കഴിയൂ. അടിയന്തിര മെഡിക്കൽ ആവശ്യങ്ങൾക്ക് എപ്പോഴും നേരിട്ട് ആശുപത്രിയെയോ ബ്ലഡ് ബാങ്കിനെയോ ബന്ധപ്പെടുക.',
+      'matrimony.eyebrow': 'സാമുദായിക വിവാഹം', 'matrimony.h2': 'വിവാഹം', 'matrimony.create.h3': 'ഒരു പ്രൊഫൈൽ സൃഷ്ടിക്കുക',
+      'matrimony.placeholder.gender': 'ലിംഗം', 'matrimony.gender.male': 'പുരുഷൻ', 'matrimony.gender.female': 'സ്ത്രീ',
+      'matrimony.placeholder.education': 'വിദ്യാഭ്യാസം', 'matrimony.placeholder.profession': 'തൊഴിൽ',
+      'matrimony.placeholder.contact': 'ബന്ധപ്പെടേണ്ട ഇമെയിൽ', 'matrimony.submit': 'പ്രൊഫൈൽ സമർപ്പിക്കുക',
+      'matrimony.browse.h2': 'പ്രൊഫൈലുകൾ കാണുക',
+      'matrimony.note': 'പ്രോട്ടോടൈപ്പ് കുറിപ്പ്: പ്രൊഫൈലുകൾ ഇവിടെ പൊതുവായി ഡെമോ ആവശ്യങ്ങൾക്കായി മാത്രം കാണിച്ചിരിക്കുന്നു. സ്വകാര്യതയ്ക്കും സുരക്ഷയ്ക്കുമായി ബന്ധപ്പെടേണ്ട വിവരങ്ങൾ പരിശോധിച്ച അംഗങ്ങൾക്ക് മാത്രം ലഭ്യമാക്കണം.',
+      'jobs.eyebrow': 'തൊഴിലവസരങ്ങൾ', 'jobs.h2': 'ജോലികൾ തിരയുക & അപേക്ഷിക്കുക',
+      'jobs.search.placeholder': 'തലക്കെട്ട്, കമ്പനി, അല്ലെങ്കിൽ സ്ഥലം അനുസരിച്ച് തിരയുക...', 'jobs.none': 'നിങ്ങളുടെ തിരച്ചിലുമായി പൊരുത്തപ്പെടുന്ന ജോലികളില്ല.',
+      'jobs.apply.title': 'ജോലിക്ക് അപേക്ഷിക്കുക', 'jobs.apply.resume': 'റെസ്യൂം ലിങ്ക് (Google Drive, LinkedIn മുതലായവ)',
+      'jobs.apply.note': 'നിങ്ങൾ എന്തുകൊണ്ട് അനുയോജ്യനാണ്? (ഐച്ഛികം)', 'jobs.apply.submit': 'അപേക്ഷ സമർപ്പിക്കുക',
+      'jobs.applybtn': 'ഇപ്പോൾ അപേക്ഷിക്കുക', 'jobs.applied.alert': 'അപേക്ഷ സമർപ്പിച്ചു',
+      'admin.blood': 'രക്തദാതാക്കൾ', 'admin.stemcell': 'സ്റ്റെം സെൽ ദാതാക്കൾ', 'admin.requests': 'രക്തം / സ്റ്റെം സെൽ അഭ്യർത്ഥനകൾ',
+      'admin.matrimony': 'വിവാഹ പ്രൊഫൈലുകൾ', 'admin.jobapps': 'ജോലി അപേക്ഷകൾ',
+      'msg.blood.success': 'രക്തദാതാവായി രജിസ്റ്റർ ചെയ്തതിന് നന്ദി!',
+      'msg.stemcell.success': 'നിങ്ങളുടെ താൽപ്പര്യം രജിസ്റ്റർ ചെയ്തതിന് നന്ദി!',
+      'msg.request.success': 'നിങ്ങളുടെ അഭ്യർത്ഥന സമർപ്പിച്ചു. പൊരുത്തമുള്ള ഒരു ദാതാവുമായി ബന്ധിപ്പിക്കാൻ ഞങ്ങളുടെ ടീം ശ്രമിക്കും.',
+      'msg.matrimony.success': 'നിങ്ങളുടെ പ്രൊഫൈൽ സമർപ്പിച്ചു!',
+      'marquee.unity': 'ഐക്യം', 'marquee.tradition': 'പാരമ്പര്യം',
+      'marquee.education': 'വിദ്യാഭ്യാസം', 'marquee.welfare': 'ക്ഷേമം',
+      'hint.phone': 'ഞങ്ങളുടെ രേഖകളുമായി പൊരുത്തപ്പെടുത്താൻ എളുപ്പമാകുന്നതിനായി, ദയവായി നിങ്ങളുടെ രജിസ്റ്റർ ചെയ്ത മൊബൈൽ നമ്പർ ഉപയോഗിക്കുക.',
+      'hint.regphone': 'ഇത് നിങ്ങളുടെ രജിസ്റ്റർ ചെയ്ത മൊബൈൽ നമ്പറായി മാറും — രക്തദാനം, സ്റ്റെം സെൽ, മറ്റ് ഫോമുകളിലും ഇതേ നമ്പർ തന്നെ ഉപയോഗിക്കുക.'
+    }
+  };
+
+  function t(key){
+    return (translations[currentLang] && translations[currentLang][key]) || (translations.en[key] || key);
+  }
+
+  function setLanguage(lang){
+    currentLang = lang;
+    document.documentElement.lang = lang;
+    document.getElementById('langBtnEn').classList.toggle('active', lang === 'en');
+    document.getElementById('langBtnMl').classList.toggle('active', lang === 'ml');
+
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      const val = t(key);
+      // Allow a small set of translations to include simple markup (e.g. <strong>)
+      if(val.includes('<strong>') || val.includes('&amp;')){
+        el.innerHTML = val;
+      } else {
+        el.textContent = val;
+      }
+    });
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+      el.placeholder = t(el.getAttribute('data-i18n-placeholder'));
+    });
+  }
+
+  function showSection(id){
+    ['home','history','objectives','committee','events','blooddonation','stemcell','request','matrimony','jobs','account','contact'].forEach(s=>{
+      const el = document.getElementById(s);
+      const isTarget = s === id;
+      el.classList.toggle('hidden', !isTarget);
+      if(isTarget){
+        el.classList.remove('section-panel');
+        void el.offsetWidth; // restart animation
+        el.classList.add('section-panel');
+      }
+    });
+    window.scrollTo({top:0, behavior:'smooth'});
+    initReveal();
+  }
+
+  function switchTab(tab){
+    document.getElementById('tab-register').classList.toggle('active', tab==='register');
+    document.getElementById('tab-login').classList.toggle('active', tab==='login');
+    document.getElementById('registerForm').parentElement.classList.toggle('hidden', tab!=='register');
+    document.getElementById('loginCard').classList.toggle('hidden', tab!=='login');
+    document.getElementById('memberArea').classList.add('hidden');
+    document.getElementById('adminDashboard').classList.add('hidden');
+  }
+
+  function switchEventsTab(kind){
+    currentEventsTab = kind;
+    document.getElementById('tab-events-done').classList.toggle('active', kind==='done');
+    document.getElementById('tab-events-planned').classList.toggle('active', kind==='planned');
+    document.getElementById('eventsDone').classList.toggle('hidden', kind!=='done');
+    document.getElementById('eventsPlanned').classList.toggle('hidden', kind!=='planned');
+    initReveal();
+  }
+
+  function eventCardHtml(ev, kind){
+    const badgeClass = kind === 'done' ? 'done' : 'planned';
+    const badgeLabel = kind === 'done' ? 'Completed' : 'Upcoming';
+    const adminControls = isAdminMode ? `
+      <div class="event-admin-controls">
+        <button type="button" class="edit-btn" onclick="openEventModal('${kind}', ${ev.id})">Edit</button>
+        <button type="button" class="delete-btn" onclick="deleteEvent('${kind}', ${ev.id})">Delete</button>
+      </div>` : '';
+    return `
+      <div class="card event-card reveal in-view">
+        <span class="event-badge ${badgeClass}">${badgeLabel}</span>
+        <div class="event-date">${escapeHtml(ev.date)}</div>
+        <h3>${escapeHtml(ev.title)}</h3>
+        <p>${escapeHtml(ev.desc)}</p>
+        ${adminControls}
+      </div>`;
+  }
+
+  function renderEvents(){
+    document.getElementById('eventsDone').innerHTML = eventsData.done.map(ev => eventCardHtml(ev,'done')).join('') || '<p style="text-align:center;grid-column:1/-1;color:var(--muted);">No events yet.</p>';
+    document.getElementById('eventsPlanned').innerHTML = eventsData.planned.map(ev => eventCardHtml(ev,'planned')).join('') || '<p style="text-align:center;grid-column:1/-1;color:var(--muted);">No events yet.</p>';
+    if(typeof refreshTiltCards === 'function') refreshTiltCards();
+  }
+
+  function openEventModal(kind, id = null){
+    document.getElementById('eventFormKind').value = kind;
+    if(id){
+      const ev = eventsData[kind].find(e => e.id === id);
+      document.getElementById('eventModalTitle').textContent = 'Edit Event';
+      document.getElementById('eventFormId').value = ev.id;
+      document.getElementById('eventFormDate').value = ev.date;
+      document.getElementById('eventFormTitle').value = ev.title;
+      document.getElementById('eventFormDesc').value = ev.desc;
+    } else {
+      document.getElementById('eventModalTitle').textContent = kind === 'done' ? 'Add Completed Event' : 'Add Planned Event';
+      document.getElementById('eventForm').reset();
+      document.getElementById('eventFormId').value = '';
+      document.getElementById('eventFormKind').value = kind;
+    }
+    document.getElementById('eventModalOverlay').classList.remove('hidden');
+  }
+
+  function closeEventModal(){
+    document.getElementById('eventModalOverlay').classList.add('hidden');
+  }
+
+  document.getElementById('eventForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    const id = document.getElementById('eventFormId').value;
+    const kind = document.getElementById('eventFormKind').value;
+    const date = document.getElementById('eventFormDate').value.trim();
+    const title = document.getElementById('eventFormTitle').value.trim();
+    const desc = document.getElementById('eventFormDesc').value.trim();
+
+    if(id){
+      const ev = eventsData[kind].find(e => e.id === Number(id));
+      if(ev){ ev.date = date; ev.title = title; ev.desc = desc; }
+    } else {
+      eventsData[kind].push({id: eventIdCounter++, date, title, desc});
+    }
+    closeEventModal();
+    renderEvents();
+  });
+
+  function deleteEvent(kind, id){
+    if(!confirm('Delete this event?')) return;
+    eventsData[kind] = eventsData[kind].filter(e => e.id !== id);
+    renderEvents();
+  }
+
+  function enterAdminMode(){
+    isAdminMode = true;
+    document.body.classList.add('admin-mode');
+    document.getElementById('adminModeBar').classList.remove('hidden');
+    document.getElementById('eventsAdminBar').classList.remove('hidden');
+    renderEvents();
+  }
+
+  function exitAdminMode(){
+    isAdminMode = false;
+    document.body.classList.remove('admin-mode');
+    document.getElementById('adminModeBar').classList.add('hidden');
+    document.getElementById('eventsAdminBar').classList.add('hidden');
+    document.getElementById('adminDashboard').classList.add('hidden');
+    renderEvents();
+    showSection('home');
+  }
+
+  document.getElementById('registerForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    const name = document.getElementById('regName').value.trim();
+    const email = document.getElementById('regEmail').value.trim().toLowerCase();
+    const phone = document.getElementById('regPhone').value.trim();
+    const district = document.getElementById('regDistrict').value;
+    const password = document.getElementById('regPassword').value;
+    const msgEl = document.getElementById('registerMsg');
+
+    if(users[email]){
+      msgEl.innerHTML = `<div class="msg error">${t('msg.reg.duplicate')}</div>`;
+      return;
+    }
+    users[email] = {name, phone, district, password};
+    msgEl.innerHTML = `<div class="msg success">${t('msg.reg.success')}</div>`;
+    this.reset();
+    setTimeout(()=>switchTab('login'), 1200);
+  });
+
+  document.getElementById('loginForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    const email = document.getElementById('loginEmail').value.trim().toLowerCase();
+    const password = document.getElementById('loginPassword').value;
+    const adminCode = document.getElementById('loginAdminCode').value.trim();
+    const msgEl = document.getElementById('loginMsg');
+
+    // Admin path: a matching code bypasses normal member login, turns on site-wide Admin Mode,
+    // and opens the admin dashboard (view-only member/message data + Events editing powers).
+    if(adminCode){
+      if(adminCode === ADMIN_CODE){
+        msgEl.innerHTML = '';
+        document.getElementById('memberArea').classList.add('hidden');
+        enterAdminMode();
+        renderAdminDashboard();
+        document.getElementById('adminDashboard').classList.remove('hidden');
+        this.reset();
+      } else {
+        msgEl.innerHTML = `<div class="msg error">${t('msg.login.admincode.invalid')}</div>`;
+      }
+      return;
+    }
+
+    // Normal member login path.
+    const user = users[email];
+    if(!user || user.password !== password){
+      msgEl.innerHTML = `<div class="msg error">${t('msg.login.invalid')}</div>`;
+      return;
+    }
+    currentUser = user;
+    msgEl.innerHTML = '';
+    document.getElementById('memberName').textContent = user.name;
+    document.getElementById('memberArea').classList.remove('hidden');
+    this.reset();
+  });
+
+  function renderAdminDashboard(){
+    const memberRows = Object.entries(users).map(([email, u]) =>
+      `<tr><td>${escapeHtml(u.name)}</td><td>${escapeHtml(email)}</td><td>${escapeHtml(u.phone)}</td><td>${escapeHtml(u.district)}</td></tr>`
+    ).join('');
+    document.querySelector('#membersTable tbody').innerHTML = memberRows;
+    document.getElementById('noMembersMsg').classList.toggle('hidden', Object.keys(users).length > 0);
+
+    const messageRows = contactMessages.map(m =>
+      `<tr><td>${escapeHtml(m.name)}</td><td>${escapeHtml(m.email)}</td><td>${escapeHtml(m.message)}</td></tr>`
+    ).join('');
+    document.querySelector('#messagesTable tbody').innerHTML = messageRows;
+    document.getElementById('noMessagesMsg').classList.toggle('hidden', contactMessages.length > 0);
+
+    document.querySelector('#adminBloodTable tbody').innerHTML = bloodDonors.map(d =>
+      `<tr><td>${escapeHtml(d.name)}</td><td>${escapeHtml(d.bloodGroup)}</td><td>${escapeHtml(d.district)}</td><td>${escapeHtml(d.phone)}</td></tr>`
+    ).join('') || '<tr><td colspan="4" style="text-align:center;color:var(--muted);">None yet.</td></tr>';
+
+    document.querySelector('#adminStemCellTable tbody').innerHTML = stemCellDonors.map(d =>
+      `<tr><td>${escapeHtml(d.name)}</td><td>${escapeHtml(d.age)}</td><td>${escapeHtml(d.district)}</td><td>${escapeHtml(d.phone)}</td></tr>`
+    ).join('') || '<tr><td colspan="4" style="text-align:center;color:var(--muted);">None yet.</td></tr>';
+
+    document.querySelector('#adminRequestsTable tbody').innerHTML = helpRequests.map(r =>
+      `<tr><td>${escapeHtml(r.type)}</td><td>${escapeHtml(r.patientName)}</td><td>${escapeHtml(r.hospital)}</td><td>${escapeHtml(r.contact)}</td><td>${escapeHtml(r.urgency)}</td></tr>`
+    ).join('') || '<tr><td colspan="5" style="text-align:center;color:var(--muted);">None yet.</td></tr>';
+
+    document.querySelector('#adminMatrimonyTable tbody').innerHTML = matrimonyProfiles.map(p =>
+      `<tr><td>${escapeHtml(p.name)}</td><td>${escapeHtml(String(p.age))}</td><td>${escapeHtml(p.gender)}</td><td>${escapeHtml(p.district)}</td><td>${escapeHtml(p.contact)}</td></tr>`
+    ).join('') || '<tr><td colspan="5" style="text-align:center;color:var(--muted);">None yet.</td></tr>';
+
+    document.querySelector('#adminJobAppsTable tbody').innerHTML = jobApplications.map(a =>
+      `<tr><td>${escapeHtml(a.jobTitle)}</td><td>${escapeHtml(a.name)}</td><td>${escapeHtml(a.email)}</td><td>${escapeHtml(a.phone)}</td></tr>`
+    ).join('') || '<tr><td colspan="4" style="text-align:center;color:var(--muted);">None yet.</td></tr>';
+  }
+
+  function escapeHtml(str){
+    const div = document.createElement('div');
+    div.textContent = str || '';
+    return div.innerHTML;
+  }
+
+  document.getElementById('contactForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    const name = document.getElementById('contactName').value.trim();
+    const email = document.getElementById('contactEmail').value.trim();
+    const message = document.getElementById('contactMessage').value.trim();
+    contactMessages.push({name, email, message});
+    document.getElementById('contactMsg').innerHTML = `<div class="msg success">${t('msg.contact.success')}</div>`;
+    this.reset();
+  });
+
+  function logout(){
+    currentUser = null;
+    document.getElementById('memberArea').classList.add('hidden');
+    document.getElementById('adminDashboard').classList.add('hidden');
+  }
+
+  // ---- Header shrink/blur on scroll ----
+  const header = document.getElementById('siteHeader');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 20);
+  });
+
+  // ---- Live "years of service" figure ----
+  const yearsEl = document.getElementById('yearsActive');
+  if(yearsEl){ yearsEl.setAttribute('data-count-to', new Date().getFullYear() - 1908); }
+
+  // ---- Animated counting numbers (hero fact strip) ----
+  function animateCountUp(el){
+    const target = parseInt(el.getAttribute('data-count-to'), 10) || 0;
+    const suffix = el.getAttribute('data-count-suffix') || '';
+    if(prefersReducedMotionCheck()){
+      el.textContent = target + suffix;
+      return;
+    }
+    const duration = 1400;
+    const start = performance.now();
+    function step(now){
+      const progress = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      el.textContent = Math.round(eased * target) + suffix;
+      if(progress < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  function prefersReducedMotionCheck(){
+    return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  }
+  document.querySelectorAll('.fact .num[data-count-to]').forEach(animateCountUp);
+
+  // ---- Scroll-reveal for cards, timeline items, etc ----
+  let revealObserver;
+  function initReveal(){
+    if(!('IntersectionObserver' in window)) return;
+    if(revealObserver) revealObserver.disconnect();
+    const revealTransition = 'opacity 0.7s ease, transform 0.7s cubic-bezier(0.16,0.84,0.32,1)';
+    revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          const el = entry.target;
+          // Apply the entrance transition inline (one-time), then clear it once done so it
+          // never competes with the faster hover-tilt transition defined on .card/.tilt-card.
+          el.style.transition = revealTransition;
+          el.classList.add('in-view');
+          el.addEventListener('transitionend', function clearTransition(){
+            el.style.transition = '';
+            el.removeEventListener('transitionend', clearTransition);
+          }, {once:true});
+          revealObserver.unobserve(el);
+        }
+      });
+    }, {threshold: 0.15});
+    document.querySelectorAll('.reveal:not(.in-view)').forEach(el => revealObserver.observe(el));
+    document.querySelectorAll('.timeline-item:not(.in-view)').forEach(el => revealObserver.observe(el));
+  }
+  renderEvents();
+  initReveal();
+  setLanguage('en');
+
+  // ================= BLOOD DONATION =================
+  const bloodDonors = [];
+
+  document.getElementById('bloodDonorForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    bloodDonors.push({
+      name: document.getElementById('bdName').value.trim(),
+      phone: document.getElementById('bdPhone').value.trim(),
+      bloodGroup: document.getElementById('bdBloodGroup').value,
+      district: document.getElementById('bdDistrict').value
+    });
+    document.getElementById('bloodDonorMsg').innerHTML = `<div class="msg success">${t('msg.blood.success')}</div>`;
+    this.reset();
+    renderBloodDonors();
+  });
+
+  function renderBloodDonors(){
+    const filter = document.getElementById('bloodFilterGroup').value;
+    const rows = bloodDonors
+      .filter(d => !filter || d.bloodGroup === filter)
+      .map(d => `<tr><td>${escapeHtml(d.name)}</td><td><span class="bg-badge">${escapeHtml(d.bloodGroup)}</span></td><td>${escapeHtml(d.district)}</td><td>${escapeHtml(d.phone)}</td></tr>`)
+      .join('');
+    document.querySelector('#bloodDonorsTable tbody').innerHTML = rows || `<tr><td colspan="4" style="text-align:center;color:var(--muted);">${t('table.none')}</td></tr>`;
+  }
+
+  // ================= STEM CELL DONATION =================
+  const stemCellDonors = [];
+
+  document.getElementById('stemCellForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    stemCellDonors.push({
+      name: document.getElementById('scName').value.trim(),
+      age: document.getElementById('scAge').value,
+      phone: document.getElementById('scPhone').value.trim(),
+      district: document.getElementById('scDistrict').value
+    });
+    document.getElementById('stemCellMsg').innerHTML = `<div class="msg success">${t('msg.stemcell.success')}</div>`;
+    this.reset();
+    renderStemCellDonors();
+  });
+
+  function renderStemCellDonors(){
+    const rows = stemCellDonors
+      .map(d => `<tr><td>${escapeHtml(d.name)}</td><td>${escapeHtml(d.age)}</td><td>${escapeHtml(d.district)}</td><td>${escapeHtml(d.phone)}</td></tr>`)
+      .join('');
+    document.querySelector('#stemCellTable tbody').innerHTML = rows || `<tr><td colspan="4" style="text-align:center;color:var(--muted);">${t('table.none')}</td></tr>`;
+  }
+
+  // ================= REQUEST HELP =================
+  const helpRequests = [];
+
+  document.getElementById('helpRequestForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    helpRequests.push({
+      type: document.getElementById('reqType').value,
+      patientName: document.getElementById('reqPatientName').value.trim(),
+      bloodGroup: document.getElementById('reqBloodGroup').value,
+      hospital: document.getElementById('reqHospital').value.trim(),
+      contact: document.getElementById('reqContact').value.trim(),
+      urgency: document.getElementById('reqUrgency').value,
+      notes: document.getElementById('reqNotes').value.trim()
+    });
+    document.getElementById('helpRequestMsg').innerHTML = `<div class="msg success">${t('msg.request.success')}</div>`;
+    this.reset();
+  });
+
+  // ================= MATRIMONY =================
+  let matrimonyIdCounter = 1;
+  const matrimonyProfiles = [
+    {id: matrimonyIdCounter++, name:'Anand K.', age:28, gender:'Male', education:'B.Tech, Computer Science', profession:'Software Engineer', district:'Kannur', contact:'anand.k@example.com'},
+    {id: matrimonyIdCounter++, name:'Devika M.', age:26, gender:'Female', education:'MBBS', profession:'Doctor', district:'Thrissur', contact:'devika.m@example.com'},
+    {id: matrimonyIdCounter++, name:'Vishnu P.', age:30, gender:'Male', education:'MBA', profession:'Bank Manager', district:'Ernakulam', contact:'vishnu.p@example.com'}
+  ];
+
+  document.getElementById('matrimonyForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    matrimonyProfiles.push({
+      id: matrimonyIdCounter++,
+      name: document.getElementById('mName').value.trim(),
+      age: document.getElementById('mAge').value,
+      gender: document.getElementById('mGender').value,
+      education: document.getElementById('mEducation').value.trim(),
+      profession: document.getElementById('mProfession').value.trim(),
+      district: document.getElementById('mDistrict').value,
+      contact: document.getElementById('mContact').value.trim()
+    });
+    document.getElementById('matrimonyMsg').innerHTML = `<div class="msg success">${t('msg.matrimony.success')}</div>`;
+    this.reset();
+    renderMatrimonyProfiles();
+  });
+
+  function renderMatrimonyProfiles(){
+    document.getElementById('matrimonyProfilesGrid').innerHTML = matrimonyProfiles.map(p => `
+      <div class="card committee-card reveal in-view">
+        <div class="avatar">${escapeHtml(p.name.charAt(0))}</div>
+        <h3>${escapeHtml(p.name)}, ${escapeHtml(String(p.age))}</h3>
+        <div class="role">${escapeHtml(p.gender)} &middot; ${escapeHtml(p.district)}</div>
+        <p style="margin-top:10px;">${escapeHtml(p.education)}<br>${escapeHtml(p.profession)}</p>
+        <p style="font-size:0.85rem;color:var(--gold);">${escapeHtml(p.contact)}</p>
+      </div>
+    `).join('');
+    if(typeof refreshTiltCards === 'function') refreshTiltCards();
+  }
+
+  // ================= JOBS =================
+  let jobIdCounter = 1;
+  const jobs = [
+    {id: jobIdCounter++, title:'Junior Web Developer', company:'Kannur Infotech', location:'Kannur', type:'Full-time', desc:'Looking for a junior developer familiar with HTML/CSS/JS to join a growing local team.'},
+    {id: jobIdCounter++, title:'Accounts Executive', company:'Coastal Traders Pvt Ltd', location:'Thalassery', type:'Full-time', desc:'Manage day-to-day accounts and bookkeeping for a mid-sized trading company.'},
+    {id: jobIdCounter++, title:'School Teacher (Maths)', company:"St. Xavier's Higher Secondary", location:'Kannur', type:'Part-time', desc:'Seeking a mathematics teacher for secondary-level students, evening batches available.'}
+  ];
+  const jobApplications = [];
+
+  function renderJobs(){
+    const query = document.getElementById('jobSearchInput').value.trim().toLowerCase();
+    const filtered = jobs.filter(j =>
+      !query ||
+      j.title.toLowerCase().includes(query) ||
+      j.company.toLowerCase().includes(query) ||
+      j.location.toLowerCase().includes(query)
+    );
+    document.getElementById('jobsGrid').innerHTML = filtered.map(j => `
+      <div class="card job-card reveal in-view">
+        <h3>${escapeHtml(j.title)}</h3>
+        <div class="job-meta">${escapeHtml(j.company)} &middot; ${escapeHtml(j.location)} &middot; ${escapeHtml(j.type)}</div>
+        <p>${escapeHtml(j.desc)}</p>
+        <button type="button" class="btn" style="margin-top:12px;" onclick="openJobModal(${j.id})">${t('jobs.applybtn')}</button>
+      </div>
+    `).join('');
+    document.getElementById('noJobsMsg').classList.toggle('hidden', filtered.length > 0);
+    if(typeof refreshTiltCards === 'function') refreshTiltCards();
+  }
+
+  function openJobModal(jobId){
+    const job = jobs.find(j => j.id === jobId);
+    document.getElementById('jobModalTitle').textContent = t('jobs.apply.title') + ': ' + job.title;
+    document.getElementById('jobApplyJobId').value = jobId;
+    document.getElementById('jobApplyForm').reset();
+    document.getElementById('jobModalOverlay').classList.remove('hidden');
+  }
+
+  function closeJobModal(){
+    document.getElementById('jobModalOverlay').classList.add('hidden');
+  }
+
+  document.getElementById('jobApplyForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    const jobId = Number(document.getElementById('jobApplyJobId').value);
+    const job = jobs.find(j => j.id === jobId);
+    jobApplications.push({
+      jobTitle: job ? job.title : 'Unknown',
+      name: document.getElementById('jobApplyName').value.trim(),
+      email: document.getElementById('jobApplyEmail').value.trim(),
+      phone: document.getElementById('jobApplyPhone').value.trim(),
+      resumeLink: document.getElementById('jobApplyResumeLink').value.trim(),
+      note: document.getElementById('jobApplyNote').value.trim()
+    });
+    closeJobModal();
+    alert(t('jobs.applied.alert') + ' "' + (job ? job.title : '') + '"');
+  });
+
+  // Initial render for all new sections
+  renderBloodDonors();
+  renderStemCellDonors();
+  renderMatrimonyProfiles();
+  renderJobs();
+
+  // ================= SPATIAL UI: CARD TILT + HERO PARALLAX =================
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // ---- Custom cursor: glowing dot + lagging ring, fine-pointer devices only ----
+  if(window.matchMedia('(hover:hover) and (pointer:fine)').matches){
+    const cursorDot = document.getElementById('cursorDot');
+    const cursorRing = document.getElementById('cursorRing');
+    if(cursorDot && cursorRing){
+      let mouseX = window.innerWidth/2, mouseY = window.innerHeight/2;
+      let ringX = mouseX, ringY = mouseY;
+      document.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX; mouseY = e.clientY;
+        cursorDot.style.left = mouseX + 'px';
+        cursorDot.style.top = mouseY + 'px';
+      });
+      function cursorLoop(){
+        ringX += (mouseX - ringX) * 0.18;
+        ringY += (mouseY - ringY) * 0.18;
+        cursorRing.style.left = ringX + 'px';
+        cursorRing.style.top = ringY + 'px';
+        requestAnimationFrame(cursorLoop);
+      }
+      cursorLoop();
+      const hoverTargets = 'a, button, .flip-card, .tilt-card, .tab-btn, .lang-btn, input, select';
+      document.addEventListener('mouseover', (e) => {
+        if(e.target.closest(hoverTargets)) cursorRing.classList.add('hover');
+      });
+      document.addEventListener('mouseout', (e) => {
+        if(e.target.closest(hoverTargets)) cursorRing.classList.remove('hover');
+      });
+    }
+  }
+
+  // Marks non-interactive cards (no form/table inside) as tilt-eligible.
+  // Re-run after any dynamic re-render since those regenerate .card elements.
+  function refreshTiltCards(){
+    document.querySelectorAll('.card').forEach(card => {
+      const hasInteractive = card.querySelector('form, input, select, textarea, table');
+      card.classList.toggle('tilt-card', !hasInteractive);
+    });
+  }
+  refreshTiltCards();
+
+  if(!prefersReducedMotion){
+    let activeTiltCard = null;
+    document.addEventListener('mousemove', (e) => {
+      const card = e.target.closest('.tilt-card');
+      if(card){
+        activeTiltCard = card;
+        const rect = card.getBoundingClientRect();
+        const relX = (e.clientX - rect.left) / rect.width - 0.5;
+        const relY = (e.clientY - rect.top) / rect.height - 0.5;
+        const rotateX = (-relY * 7).toFixed(2);
+        const rotateY = (relX * 7).toFixed(2);
+        card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-6px) scale(1.015)`;
+        card.style.setProperty('--mx', `${((e.clientX - rect.left) / rect.width * 100).toFixed(1)}%`);
+        card.style.setProperty('--my', `${((e.clientY - rect.top) / rect.height * 100).toFixed(1)}%`);
+      } else if(activeTiltCard){
+        activeTiltCard.style.transform = '';
+        activeTiltCard = null;
+      }
+    });
+    window.addEventListener('mouseout', (e) => {
+      if(!e.relatedTarget && activeTiltCard){
+        activeTiltCard.style.transform = '';
+        activeTiltCard = null;
+      }
+    });
+
+    // Hero parallax: lamp + Malayalam watermark drift with both cursor position and scroll depth,
+    // for a layered sense of depth. Mouse and scroll contributions are combined on every update
+    // so neither one overwrites the other's offset.
+    const heroEl = document.querySelector('.hero');
+    if(heroEl){
+      const malayalam = heroEl.querySelector('.hero-malayalam');
+      const lamp = heroEl.querySelector('.lamp-wrap');
+      let heroMouseRelX = 0, heroMouseRelY = 0;
+
+      function updateHeroParallax(){
+        const scrollOffset = Math.min(window.scrollY || 0, 400);
+        if(malayalam) malayalam.style.transform = `translate(${(heroMouseRelX*12).toFixed(1)}px, ${(heroMouseRelY*12 + scrollOffset*0.12).toFixed(1)}px)`;
+        if(lamp) lamp.style.transform = `translate(${(heroMouseRelX*-16).toFixed(1)}px, ${(heroMouseRelY*-10 + scrollOffset*0.3).toFixed(1)}px)`;
+      }
+
+      heroEl.addEventListener('mousemove', (e) => {
+        const rect = heroEl.getBoundingClientRect();
+        heroMouseRelX = (e.clientX - rect.left) / rect.width - 0.5;
+        heroMouseRelY = (e.clientY - rect.top) / rect.height - 0.5;
+        updateHeroParallax();
+        heroEl.style.setProperty('--sx', `${((e.clientX - rect.left) / rect.width * 100).toFixed(1)}%`);
+        heroEl.style.setProperty('--sy', `${((e.clientY - rect.top) / rect.height * 100).toFixed(1)}%`);
+      });
+      heroEl.addEventListener('mouseleave', () => {
+        heroMouseRelX = 0;
+        heroMouseRelY = 0;
+        updateHeroParallax();
+        heroEl.style.setProperty('--sx', '50%');
+        heroEl.style.setProperty('--sy', '40%');
+      });
+
+      let scrollTicking = false;
+      window.addEventListener('scroll', () => {
+        if(!scrollTicking){
+          requestAnimationFrame(() => { updateHeroParallax(); scrollTicking = false; });
+          scrollTicking = true;
+        }
+      });
+    }
+  }
+</script>
+
+</body>
+</html>
